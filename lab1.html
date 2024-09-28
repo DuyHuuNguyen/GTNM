@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>User Form</title>
+    
+</head>
+<body>
+
+<div class="form-container">
+    <form id="userForm">
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" maxlength="255" required>
+            <div class="error-message" id="usernameError"></div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" maxlength="255" required>
+            <span class="password-toggle" onclick="togglePassword()"></span>
+            <div class="error-message" id="passwordError"></div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" maxlength="255" required>
+            <div class="error-message" id="emailError"></div>
+        </div>
+
+        <!-- Full Name (optional) -->
+        <div class="form-group">
+            <label for="fullName">Full Name (optional)</label>
+            <input type="text" id="fullName" placeholder="Enter your full name" maxlength="255">
+        </div>
+
+        <!-- Role -->
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" required>
+                <option value="">Select a role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <!-- Additional roles can be added here -->
+            </select>
+        </div>
+
+        <!-- Profile Picture -->
+        <div class="form-group">
+            <label for="profilePicture">Profile Picture</label>
+            <input type="file" id="profilePicture" accept="image/*" onchange="previewImage(event)">
+            <img id="imagePreview" src="" alt="Profile Picture Preview" style="display:none;">
+        </div>
+
+        <!-- Account Created At (Read-only) -->
+        <div class="form-group">
+            <label for="createdAt">Account Created At</label>
+            <input type="text" id="createdAt" readonly value="2023-09-01 12:34:56">
+        </div>
+
+        <!-- Last Updated At (Read-only) -->
+        <div class="form-group">
+            <label for="updatedAt">Last Updated At</label>
+            <input type="text" id="updatedAt" readonly value="2023-09-28 09:15:23">
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button type="submit" class="primary" id="submitBtn" disabled>Create Account</button>
+            <button type="button" class="secondary">Cancel</button>
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>
