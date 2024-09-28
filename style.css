@@ -64,7 +64,7 @@ body {
     cursor: pointer;
 }
 .buttons button:disabled {
-    background-color: #ccc;
+    background-color: #28a745;
     cursor: not-allowed;
 }
 .buttons .primary {
@@ -72,11 +72,17 @@ body {
     color: white;
 }
 .buttons .secondary {
-    background-color: #ccc;
+    background-color: #28a745;
+    color: white;
 }
 @media (max-width: 600px) {
     .form-container {
         padding: 15px;
         max-width: 100%;
     }
+}
+
+.back-home{
+    background-color: #28a745;
+    color: white;
 }
