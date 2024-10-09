@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Code Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        #testcase-container {
+            width: 30%; /* Kích thước phần Test Cases */
+            display: flex;
+            flex-direction: column;
+        }
+        #editor-output-container {
+            flex: 1; /* Cột lớn hơn cho Editor và Output */
+            display: flex;
+            flex-direction: column;
+        }
+        #editor {
+            flex: 2; /* Tăng kích thước cho Editor */
+            border: 1px solid #ccc;
+            background-color: #2c2f33;
+            color: #fff;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-y: auto;
+            height: 70%; /* Tăng chiều cao cho Editor */
+            box-sizing: border-box;
+        }
+        #output {
+            flex: 1; /* Tăng kích thước cho Output */
+            border: 1px solid #ccc;
+            background-color: #f7f7f7;
+            color: #333;
+            padding: 20px;
+            height: 30%; /* Đặt chiều cao cho Output */
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        #testcase {
+            background-color: #f7f7f7;
+            color: #333;
+            padding: 20px;
+            height: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Test Code Online</h1>
+    </header>
+
+    <main>
+        <div id="testcase-container">
+            <h2>Test Cases</h2>
+            <div id="testcase">
+                <!-- You can add predefined test cases here -->
+                <p>Test Case 1: Input - `2, 3`, Expected Output - `5`</p>
+                <p>Test Case 2: Input - `5, 5`, Expected Output - `10`</p>
+            </div>
+        </div>
+        <div id="editor-output-container">
+            <h2>Editor</h2>
+            <div id="editor"></div>
+            <button onclick="runCode()">Run Code</button>
+            <h2>Output</h2>
+            <div id="output">Output will be shown here...</div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.0/min/vs/loader.js"></script>
+    <script>
+        // Load Monaco Editor
+        require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.31.0/min/vs' } });
+        require(['vs/editor/editor.main'], function () {
+            window.editor = monaco.editor.create(document.getElementById('editor'), {
+                value: '// Write your code here\nfunction add(a, b) {\n  return a + b;\n}',
+                language: 'javascript',
+                theme: 'vs-dark'
+            });
+        });
+
+        // Function to run code
+        function runCode() {
+            const code = window.editor.getValue();
+            try {
+                const result = eval(code);
+                document.getElementById('output').textContent = result === undefined ? '' : result;
+            } catch (e) {
+                document.getElementById('output').textContent = e.message;
+            }
+        }
+    </script>
+</body>
+</html>

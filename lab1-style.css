@@ -86,3 +86,13 @@ body {
     background-color: #28a745;
     color: white;
 }
+
+.back {
+    /* margin-top: 20px; */
+    display: block;
+    text-align: center;
+    background-color:#28a745;
+    color: white;
+    /* padding: 10px; */
+    text-decoration: none;
+}

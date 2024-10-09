@@ -3,32 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Home</title>
+    <title>Dynamic Navigation with Form</title>
+  
+    <link rel="stylesheet" href="index_style.css">
+
 </head>
 <body>
-    <div class="header">
-        <ul id="nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="labs.html">Labs
-                <i class="ti-angle-down"></i>
-                </a>
-                <ul class="subnav">
-                    <li><a href="lab1.html">Lab1</a></li>
-                    <li><a href="nhom2.html">Lab2</a></li>
-                    <li><a href="">Lap3</a></li>
-                </ul>
-            </li>
-        </ul>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" id="home-link" onclick="showContent('home')">Home</a></li>
+                <li><a href="#" id="about-link" onclick="showContent('about')">About</a></li>
+                <li><a href="#" id="labs-link" class="active" onclick="showContent('labs')">Labs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="content-section">
+            <h1>My Home</h1>
+            <p>Welcome to my homepage.</p>
+        </section>
 
-    </div>
-    <div class="content">
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <h1>My About</h1>
+            <p>Information about me.</p>
+        </section>
 
-    </div>
-    <div class="footer">
+        <!-- Labs Section -->
+        <section id="labs" class="content-section active">
+            <div class="tabs">
+                <span class="tab active" onclick="showLab('lab1')">Lab 1</span>
+                <span class="tab" onclick="showLab('lab2')">Lab 2</span>
+            </div>
+            <div id="lab1-content" class="lab-content active">
 
-    </div>
-    
+              <!-- thêm hàm để khi nhấn hiện ra -->
+              <div class="group" onclick="toggleForm('form-container')">
+                  <h2>Group 1: Creating Account</h2>
+                  <!-- <p >Click to view more</p> -->
+                  <a href="lab1.html" id="about-link"  style=" text-decoration: none;">Click to view more </a>
+                   <!--  lab1 -->
+                <div class="form-container" id="form-container">
+                  <form>
+                      <!-- Username -->
+                      <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter your username" maxlength="255" required>
+                        <div class="error-message" id="usernameError"></div>
+                      </div>
+
+                      <!-- Password -->
+                      <div class="form-group">
+                          <label for="password">Password</label>
+                          <input type="password" id="password" placeholder="Enter your password" maxlength="255" required>
+                          <span class="password-toggle" onclick="togglePassword()"></span>
+                          <div class="error-message" id="passwordError"></div>
+                      </div>
+
+                      <!-- Email -->
+                      <div class="form-group">
+                          <label for="email">Email Address</label>
+                          <input type="email" id="email" placeholder="Enter your email" maxlength="255" required>
+                          <div class="error-message" id="emailError"></div>
+                      </div>
+
+                      <!-- Full Name (optional) -->
+                      <div class="form-group">
+                          <label for="fullName">Full Name (optional)</label>
+                          <input type="text" id="fullName" placeholder="Enter your full name" maxlength="255">
+                      </div>
+
+                      <!-- Role -->
+                      <div class="form-group">
+                          <label for="role">Role</label>
+                          <select id="role" required>
+                              <option value="">Select a role</option>
+                              <option value="admin">Admin</option>
+                              <option value="user">User</option>
+                              <!-- Additional roles can be added here -->
+                          </select>
+                      </div>
+
+                      <!-- Profile Picture -->
+                      <div class="form-group">
+                          <label for="profilePicture">Profile Picture</label>
+                          <input type="file" id="profilePicture" accept="image/*" onchange="previewImage(event)">
+                          <img id="imagePreview" src="" alt="Profile Picture Preview" style="display:none;">
+                      </div>
+
+                      <!-- Account Created At (Read-only) -->
+                      <div class="form-group">
+                          <label for="createdAt">Account Created At</label>
+                          <input type="text" id="createdAt" readonly value="2023-09-01 12:34:56">
+                      </div>
+
+                      <!-- Last Updated At (Read-only) -->
+                      <div class="form-group">
+                          <label for="updatedAt">Last Updated At</label>
+                          <input type="text" id="updatedAt" readonly value="2023-09-28 09:15:23">
+                      </div>
+
+                      <!-- Buttons -->
+                      <div class="buttons">
+                          <button type="submit" class="primary" id="submitBtn" disabled>Create Account</button>
+                          <button type="button" class="secondary">Cancel</button>
+                          <br> <br>
+                          <button type="button" class="back-home"><a>Home</a></button>
+                      </div>
+                  </form>
+                </div>
+
+              </div>
+
+
+
+
+                  <!-- thêm hàm để khi nhấn hiện ra -->
+            <div class="group" onclick="toggleForm('from-lab2')" >
+              <h2>Group 2: Course Management</h2>
+              <a href="nhom2.html" id="about-link"  style=" text-decoration: none;">Click to view more</a>
+
+              
+              <div class="container" id="from-lab2" style="display: none;">
+                  <h2 id="editing">Create/Edit Course</h2>
+                  <form id="courseForm">
+                      <!-- Course ID (Read-only) -->
+                      <label for="course_id">Course ID</label>
+                      <input type="text" id="course_id" class="read-only" readonly>
+              
+                      <!-- Course Name (Required) -->
+                      <label for="course_name">Course Name <span style="color: red">*</span></label>
+                      <input type="text" id="course_name" maxlength="255" required placeholder="Enter course name">
+              
+                      <!-- Course Description (Optional) -->
+                      <label for="course_description">Course Description</label>
+                      <textarea id="course_description" placeholder="Enter detailed description"></textarea>
+              
+                      <!-- Instructor (Required) -->
+                      <label for="created_by">Instructor <span style="color: red">*</span></label>
+                      <select id="created_by" required>
+                          <option value="">Select instructor</option>
+                          <option value="1">Instructor A</option>
+                          <option value="2">Instructor B</option>
+                          <option value="3">Instructor C</option>
+                      </select>
+              
+                      <!-- Created At (Read-only) -->
+                      <label for="created_at">Created At</label>
+                      <input type="text" id="created_at" class="read-only" readonly>
+              
+                      <!-- Updated At (Read-only) -->
+                      <label for="updated_at">Updated At</label>
+                      <input type="text" id="updated_at" class="read-only" readonly>
+              
+                      <!-- Form Actions -->
+                      <div class="actions">
+                          <button type="submit">Save Course</button>
+                          <button type="button" onclick="confirmDelete()">Delete Course</button>
+                          <div class="back">
+                              <a href="index.html" class="back-home">Back to Home</a>
+                          </div>
+                      </div>
+                  </form>
+              
+                  <!-- Nút Back to Home -->
+                  
+              
+                  <!-- View Course Details (Read-only Modal/Section) -->
+                  <div id="courseDetails" style="display: none;">
+                      <h2>Course Details</h2>
+                      <p><strong>Course ID:</strong> <span id="view_course_id"></span></p>
+                      <p><strong>Course Name:</strong> <span id="view_course_name"></span></p>
+                      <p><strong>Description:</strong> <span id="view_course_description"></span></p>
+                      <p><strong>Instructor:</strong> <span id="view_created_by"></span></p>
+                      <p><strong>Created At:</strong> <span id="view_created_at"></span></p>
+                      <p><strong>Updated At:</strong> <span id="view_updated_at"></span></p>
+                  </div>
+              </div>
+        
+              <script>
+                  document.getElementById('courseForm').addEventListener('submit', function (e) {
+                      e.preventDefault();
+                      alert('Course saved successfully!');
+                      // Here you would handle form submission and course creation/updating logic
+                  });
+              
+                  function confirmDelete() {
+                      if (confirm('Are you sure you want to delete this course?')) {
+                          alert('Course deleted successfully!');
+                          // Here you would handle the course deletion logic
+                      }
+                  }
+              
+                  // Simulating fetching course data (example)
+                  function loadCourseData() {
+                      // Simulating course data (replace this with actual data from your database)
+                      const courseData = {
+                          course_id: '12345',
+                          course_name: 'Example Course',
+                          course_description: 'This is an example course description.',
+                          created_by: 'Instructor A',
+                          created_at: '2024-09-27 14:23',
+                          updated_at: '2024-09-28 15:45'
+                      };
+              
+                      // Populate the form fields with the course data
+                      document.getElementById('course_id').value = courseData.course_id;
+                      document.getElementById('course_name').value = courseData.course_name;
+                      document.getElementById('course_description').value = courseData.course_description;
+                      document.getElementById('created_by').value = courseData.created_by;
+                      document.getElementById('created_at').value = courseData.created_at;
+                      document.getElementById('updated_at').value = courseData.updated_at;
+                  }
+              
+                  // Call this function to load course data (if editing an existing course)
+                  loadCourseData();
+              </script>
+
+               </div>
+            </div>
+
+
+            <div id="lab2-content" class="lab-content"  >
+
+                <div class="group" onclick="toggleForm('from-login')"  >
+                    <h2>Group 3: Login </h2>
+                    <a href="\lab2\login.html" id="about-link"  style=" text-decoration: none;">Click to view more</a>
+                    <div class="login-container" id="from-login" style="display: none;">
+                      <h2>Login</h2>
+                      <form>
+                          <input type="text" placeholder="username" required>
+                          <input type="password" placeholder="password" required>
+                          
+                          <!-- Check box "Remember me" -->
+                          <div class="remember-me">
+                              <input type="checkbox" id="remember-me">
+                              <label for="remember-me">Remember me</label>
+                          </div>
+              
+                          <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
+                      <div class="forgot-password">
+                          <a href="#" onclick="alert('Chức năng quên mật khẩu sẽ được xử lý ở đây.')">Forgot password?</a>
+                      </div>
+                      <div class="or-divider">
+                          <span>Hoặc</span>
+                      </div>
+                      <div class="social-login-container">
+                          <button class="btn btn-google" onclick="alert('Đăng nhập bằng Google sẽ được xử lý ở đây.')">
+                              <img src="https://th.bing.com/th/id/OIP.Q19rgXCu0umuX8KoA5bZVgHaHa?rs=1&pid=ImgDetMain" alt="Google logo">
+                              Login width Google
+                          </button>
+                          <button class="btn btn-facebook" onclick="alert('Đăng nhập bằng Facebook sẽ được xử lý ở đây.')">
+                              <img src="https://i.pinimg.com/736x/fb/4c/fc/fb4cfc050d8ea70455dfe540b8f2b9a9.jpg" alt="Facebook logo">
+                              Login With Facebook
+                          </button>
+                      </div>
+                      <a href="#" class="create-account-link" onclick="alert('Chức năng tạo tài khoản mới sẽ được xử lý ở đây.')">Create account</a>
+                  </div>
+                </div>
+                <!-- hello bài tập test code -->
+                <div class="group"  onclick="toggleForm('test code')">
+                    <h2>Group 4: Running code</h2>
+                    <a href="\lab2\test_code.html" id="about-link" style=" text-decoration: none;">Click to view more</a>
+                
+                </div>
+
+
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        // Function to show the correct content section based on the clicked link
+        function showContent(section) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+
+            // Remove active class from all links
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show the selected section and add active class to the clicked link
+            document.getElementById(section).classList.add('active');
+            document.getElementById(section + '-link').classList.add('active');
+        }
+
+        // Function to show the correct Lab content (Lab 1 or Lab 2)
+        function showLab(lab) {
+            // Hide both lab contents
+            document.querySelectorAll('.lab-content').forEach(labContent => {
+                labContent.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show the selected lab content and add active class to the clicked tab
+            document.getElementById(lab + '-content').classList.add('active');
+            document.querySelector(`.tab[onclick="showLab('${lab}')"]`).classList.add('active');
+        }
+
+        // Function to toggle the visibility of the form
+        function toggleForm(formId) {
+          const formContainer = document.getElementById(formId);
+          if (formContainer) {
+              formContainer.style.display = formContainer.style.display === 'none' || formContainer.style.display === '' ? 'block' : 'none';
+          }
+        }
+
+        // Function to toggle password visibility
+        function togglePassword() {
+            const passwordField = document.getElementById('password');
+            if (passwordField.type === "text") {
+                passwordField.type = "password";
+            } else {
+                passwordField.type = "text";
+            }
+        }
+
+        // Initially show the Labs content by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showContent('labs');
+            showLab('lab1');
+        });
+    </script>
 </body>
 </html>
