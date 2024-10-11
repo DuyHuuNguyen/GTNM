@@ -12,7 +12,7 @@
             <div class="profile">
                 <img src="https://appmaster.io/cdn-cgi/image/width=1024,quality=83,format=auto/api/_files/hRaLG2N4DVjRZJQzCpN2zJ/download/" alt="Profile" class="profile-pic">
                 <div class="profile-info">
-                    <h2>HaiZuka</h2>
+                    <h2>Nguyen Huu Duy</h2>
                     <span class="difficulty">Đơn Giản</span>
                     <span class="points">100 Điểm</span>
                 </div>
@@ -55,7 +55,15 @@
             <!-- Right Side: Code Editor and Test Results -->
             <section class="code-section">
                 <div class="code-editor">
-                    <h3>Java</h3>
+                    <div class="editor-header">
+                        <select id="language-select">
+                            <option value="java">Java</option>
+                            <option value="csharp">C#</option>
+                            <option value="cpp">C++</option>
+                            <option value="python">Python</option>
+                            <option value="ruby">Ruby</option>
+                        </select>
+                    </div>
                     <textarea placeholder="Enter your code here..."></textarea>
                 </div>
                 <div class="test-cases">
@@ -64,15 +72,15 @@
                     <div class="test-case-results">
                         <h4>Kiểm Thử</h4>
                         <p>Vui lòng chạy thử code của bạn trước!</p>
-                        <ul>
-                            <li>Kiểm thử 1</li>
-                            <li>Kiểm thử 2</li>
-                            <li>Kiểm thử 3</li>
-                        </ul>
+                        <div class="test-cases">
+                            <div class="test-case" data-status="pending">Kiểm thử 1</div>
+                            <div class="test-case" data-status="pending">Kiểm thử 2</div>
+                            <div class="test-case-false" data-status="pending">Kiểm thử 3</div>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
-    </div>
+    </div>   
 </body>
 </html>
