@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean và ApplicationContext trong Spring Boot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .document {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .author {
+            display: flex;
+            align-items: center;
+        }
+        .author img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .stats {
+            font-size: 0.9em;
+            color: #666;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        blockquote {
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            margin: 0;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="header">
+            <div class="author">
+                <img src="https://via.placeholder.com/40" alt="Vu Tong">
+                <div>
+                    <strong>Vu Tong</strong> @tonghoangvu
+                    <div>Đã đăng vào thg 2 11, 2021 9:25 SA - 4 phút đọc</div>
+                </div>
+            </div>
+            <button>Theo dõi</button>
+        </div>
+        <div class="stats">
+            15.1K 655 51 &nbsp;&nbsp;&nbsp; 👁️ 54.5K 💬 8 🔖 27
+        </div>
+        <h1>Bean và ApplicationContext là gì trong Spring Boot?</h1>
+        <span class="tag">Happy New Year</span>
+        <div class="warning">
+            ⚠️ Bài đăng này đã không được cập nhật trong 3 năm
+        </div>
+        <h2>1. Bean và ApplicationContext là gì?</h2>
+        <h3>1.1. Bean là gì?</h3>
+        <p>Trong documentation của Spring framework, thì bean được định nghĩa như sau:</p>
+        <blockquote>
+            In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and managed by a Spring IoC container.
+        </blockquote>
+        <!-- Thêm nội dung tiếp theo ở đây -->
+         <p>
+        Bài toán tìm x trong lũy thừa toán lớp 6 nâng cao
+        Trong chương trình toán lớp 6, bài toán “tìm x” là một dạng toán phổ biến và xuất hiện đều đặn trong các bài học ở học kì 1, học kì 2 và ở cả toán các lớp 7, 8, 9 …. Dạng toán này không chỉ giới hạn trong nội dung bài học cụ thể mà còn mở rộng đến nhiều dạng toán khác nhau và đôi khi dùng cả trong toán có lời văn và mức độ khác nhau tùy thuộc vào từng bài và đối tượng học sinh cụ thể.
+
+        Từ cấp tiểu học, học sinh đã quen thuộc với việc giải các dạng toán tìm x trong tập hợp số tự nhiên. Khi lên cấp THCS, học sinh tiếp tục gặp với những bài toán tìm x ở cả dạng đơn giản và nâng cao, không chỉ trong tập số tự nhiên mà còn mở rộng ra số nguyên, số hữu tỉ, hoặc số thực (ở lớp 7). Mặc dù đã được làm quen toán tìm x ở cấp tiểu học, nhưng nhiều học sinh vẫn cảm thấy khó khăn khi giải bài toán tìm x, đặc biệt là ở dạng nâng cao như toán tìm x trong lũy thừa toán lớp 6
+
+        Việc trang bị cho học sinh phương pháp giải bài toán tìm x từ lớp 6 là rất quan trọng. Điều này giúp học sinh dễ dàng giải các bài tập liên quan ở các cấp học cao hơn, tạo ra sự đam mê cho các em trong quá trình học tập môn toán. 
+
+        Bài viết này thầy giáo sẽ chia sẻ kinh nghiệm tích lũy từ quá trình dạy học, áp dụng trong thực tế giảng dạy ở trường, nhằm giúp học sinh nâng cao kỹ năng giải bài toán “tìm x“
+
+        Để giải được bài tập dạng này các em phải nắm vững kiến thức về lũy thừa, các phép tính trong tập số nguyên, phương pháp tìm số trừ, số bị trừ, số chia, số bị chia, thừa số, quy tắc chuyển vế đổi dấu. Sau đây là các bài tập mẫu có giải chi tiết và bài tập áp dụng
+
+        Bài 1: Tìm x biết
+        a) 3x = 9
+        b) x2 = 16
+        c) 3 – (x – 2)2 = 2
+        d)4x – 1 + 3.4x +1 = 196
+        e) 3x + 1 – 54 = 3x
+        f) 22x + 3 : 2x + 1 = 32
+        g) (x – 1)3 = (x – 1)2
+        </p>
+    </div>
+</body>
+</html>

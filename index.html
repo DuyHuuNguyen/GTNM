@@ -21,14 +21,16 @@
     <main>
         <!-- Home Section -->
         <section id="home" class="content-section">
-            <h1>My Home</h1>
-            <p>Welcome to my homepage.</p>
+            
+            <iframe class="" src="nlu-intro.html" width="100%" height="3000px"></iframe>
         </section>
 
         <!-- About Section -->
         <section id="about" class="content-section">
-            <h1>My About</h1>
-            <p>Information about me.</p>
+            <!-- <h1>My About</h1>
+            <p>Information about me.</p> -->
+            <iframe class="" src="cv.html" width="100%" height="1500px"></iframe>
+
         </section>
 
         <!-- Labs Section -->
@@ -36,245 +38,71 @@
             <div class="tabs">
                 <span class="tab active" onclick="showLab('lab1')">Lab 1</span>
                 <span class="tab" onclick="showLab('lab2')">Lab 2</span>
+                <span class="tab3" onclick="showLab('lab3')">Lab 3</span>
             </div>
-            <div id="lab1-content" class="lab-content active">
-
-              <!-- thêm hàm để khi nhấn hiện ra -->
-              <div class="group" onclick="toggleForm('form-container')">
-                  <h2>Task 1: Creating Account</h2>
-                  <!-- <p >Click to view more</p> -->
-                  <a href="lab1.html" id="about-link"  style=" text-decoration: none;">Click to view more </a>
-                   <!--  lab1 -->
-                <div class="form-container" id="form-container">
-                  <form>
-                      <!-- Username -->
-                      <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" placeholder="Enter your username" maxlength="255" required>
-                        <div class="error-message" id="usernameError"></div>
-                      </div>
-
-                      <!-- Password -->
-                      <div class="form-group">
-                          <label for="password">Password</label>
-                          <input type="password" id="password" placeholder="Enter your password" maxlength="255" required>
-                          <span class="password-toggle" onclick="togglePassword()"></span>
-                          <div class="error-message" id="passwordError"></div>
-                      </div>
-
-                      <!-- Email -->
-                      <div class="form-group">
-                          <label for="email">Email Address</label>
-                          <input type="email" id="email" placeholder="Enter your email" maxlength="255" required>
-                          <div class="error-message" id="emailError"></div>
-                      </div>
-
-                      <!-- Full Name (optional) -->
-                      <div class="form-group">
-                          <label for="fullName">Full Name (optional)</label>
-                          <input type="text" id="fullName" placeholder="Enter your full name" maxlength="255">
-                      </div>
-
-                      <!-- Role -->
-                      <div class="form-group">
-                          <label for="role">Role</label>
-                          <select id="role" required>
-                              <option value="">Select a role</option>
-                              <option value="admin">Admin</option>
-                              <option value="user">User</option>
-                              <!-- Additional roles can be added here -->
-                          </select>
-                      </div>
-
-                      <!-- Profile Picture -->
-                      <div class="form-group">
-                          <label for="profilePicture">Profile Picture</label>
-                          <input type="file" id="profilePicture" accept="image/*" onchange="previewImage(event)">
-                          <img id="imagePreview" src="" alt="Profile Picture Preview" style="display:none;">
-                      </div>
-
-                      <!-- Account Created At (Read-only) -->
-                      <div class="form-group">
-                          <label for="createdAt">Account Created At</label>
-                          <input type="text" id="createdAt" readonly value="2023-09-01 12:34:56">
-                      </div>
-
-                      <!-- Last Updated At (Read-only) -->
-                      <div class="form-group">
-                          <label for="updatedAt">Last Updated At</label>
-                          <input type="text" id="updatedAt" readonly value="2023-09-28 09:15:23">
-                      </div>
-
-                      <!-- Buttons -->
-                      <div class="buttons">
-                          <button type="submit" class="primary" id="submitBtn" disabled>Create Account</button>
-                          <button type="button" class="secondary">Cancel</button>
-                          <br> <br>
-                          <button type="button" class="back-home"><a>Home</a></button>
-                      </div>
-                  </form>
-                </div>
-
-              </div>
-
-
-
-
-                  <!-- thêm hàm để khi nhấn hiện ra -->
-            <div class="group" onclick="toggleForm('from-lab2')" >
-              <h2>Task 2: Course Management</h2>
-              <a href="nhom2.html" id="about-link"  style=" text-decoration: none;">Click to view more</a>
-
-              
-              <div class="container" id="from-lab2" style="display: none;">
-                  <h2 id="editing">Create/Edit Course</h2>
-                  <form id="courseForm">
-                      <!-- Course ID (Read-only) -->
-                      <label for="course_id">Course ID</label>
-                      <input type="text" id="course_id" class="read-only" readonly>
-              
-                      <!-- Course Name (Required) -->
-                      <label for="course_name">Course Name <span style="color: red">*</span></label>
-                      <input type="text" id="course_name" maxlength="255" required placeholder="Enter course name">
-              
-                      <!-- Course Description (Optional) -->
-                      <label for="course_description">Course Description</label>
-                      <textarea id="course_description" placeholder="Enter detailed description"></textarea>
-              
-                      <!-- Instructor (Required) -->
-                      <label for="created_by">Instructor <span style="color: red">*</span></label>
-                      <select id="created_by" required>
-                          <option value="">Select instructor</option>
-                          <option value="1">Instructor A</option>
-                          <option value="2">Instructor B</option>
-                          <option value="3">Instructor C</option>
-                      </select>
-              
-                      <!-- Created At (Read-only) -->
-                      <label for="created_at">Created At</label>
-                      <input type="text" id="created_at" class="read-only" readonly>
-              
-                      <!-- Updated At (Read-only) -->
-                      <label for="updated_at">Updated At</label>
-                      <input type="text" id="updated_at" class="read-only" readonly>
-              
-                      <!-- Form Actions -->
-                      <div class="actions">
-                          <button type="submit">Save Course</button>
-                          <button type="button" onclick="confirmDelete()">Delete Course</button>
-                          <div class="back">
-                              <a href="index.html" class="back-home">Back to Home</a>
-                          </div>
-                      </div>
-                  </form>
-              
-                  <!-- Nút Back to Home -->
-                  
-              
-                  <!-- View Course Details (Read-only Modal/Section) -->
-                  <div id="courseDetails" style="display: none;">
-                      <h2>Course Details</h2>
-                      <p><strong>Course ID:</strong> <span id="view_course_id"></span></p>
-                      <p><strong>Course Name:</strong> <span id="view_course_name"></span></p>
-                      <p><strong>Description:</strong> <span id="view_course_description"></span></p>
-                      <p><strong>Instructor:</strong> <span id="view_created_by"></span></p>
-                      <p><strong>Created At:</strong> <span id="view_created_at"></span></p>
-                      <p><strong>Updated At:</strong> <span id="view_updated_at"></span></p>
-                  </div>
-              </div>
-        
-              <script>
-                  document.getElementById('courseForm').addEventListener('submit', function (e) {
-                      e.preventDefault();
-                      alert('Course saved successfully!');
-                      // Here you would handle form submission and course creation/updating logic
-                  });
-              
-                  function confirmDelete() {
-                      if (confirm('Are you sure you want to delete this course?')) {
-                          alert('Course deleted successfully!');
-                          // Here you would handle the course deletion logic
-                      }
-                  }
-              
-                  // Simulating fetching course data (example)
-                  function loadCourseData() {
-                      // Simulating course data (replace this with actual data from your database)
-                      const courseData = {
-                          course_id: '12345',
-                          course_name: 'Example Course',
-                          course_description: 'This is an example course description.',
-                          created_by: 'Instructor A',
-                          created_at: '2024-09-27 14:23',
-                          updated_at: '2024-09-28 15:45'
-                      };
-              
-                      // Populate the form fields with the course data
-                      document.getElementById('course_id').value = courseData.course_id;
-                      document.getElementById('course_name').value = courseData.course_name;
-                      document.getElementById('course_description').value = courseData.course_description;
-                      document.getElementById('created_by').value = courseData.created_by;
-                      document.getElementById('created_at').value = courseData.created_at;
-                      document.getElementById('updated_at').value = courseData.updated_at;
-                  }
-              
-                  // Call this function to load course data (if editing an existing course)
-                  loadCourseData();
-              </script>
-
-               </div>
-            </div>
-
-
-            <div id="lab2-content" class="lab-content"  >
-
-                <div class="group" onclick="toggleForm('from-login')"  >
-                    <h2>Task 3: Login </h2>
-                    <a href="\lab2\login.html" id="about-link"  style=" text-decoration: none;">Click to view more</a>
-                    <div class="login-container" id="from-login" style="display: none;">
-                      <h2>Login</h2>
-                      <form>
-                          <input type="text" placeholder="username" required>
-                          <input type="password" placeholder="password" required>
-                          
-                          <!-- Check box "Remember me" -->
-                          <div class="remember-me">
-                              <input type="checkbox" id="remember-me">
-                              <label for="remember-me">Remember me</label>
-                          </div>
-              
-                          <button type="submit" class="btn btn-primary">Login</button>
-                      </form>
-                      <div class="forgot-password">
-                          <a href="#" onclick="alert('Chức năng quên mật khẩu sẽ được xử lý ở đây.')">Forgot password?</a>
-                      </div>
-                      <div class="or-divider">
-                          <span>Hoặc</span>
-                      </div>
-                      <div class="social-login-container">
-                          <button class="btn btn-google" onclick="alert('Đăng nhập bằng Google sẽ được xử lý ở đây.')">
-                              <img src="https://th.bing.com/th/id/OIP.Q19rgXCu0umuX8KoA5bZVgHaHa?rs=1&pid=ImgDetMain" alt="Google logo">
-                              Login width Google
-                          </button>
-                          <button class="btn btn-facebook" onclick="alert('Đăng nhập bằng Facebook sẽ được xử lý ở đây.')">
-                              <img src="https://i.pinimg.com/736x/fb/4c/fc/fb4cfc050d8ea70455dfe540b8f2b9a9.jpg" alt="Facebook logo">
-                              Login With Facebook
-                          </button>
-                      </div>
-                      <a href="#" class="create-account-link" onclick="alert('Chức năng tạo tài khoản mới sẽ được xử lý ở đây.')">Create account</a>
-                  </div>
-                </div>
-                <!-- hello bài tập test code -->
-                <div class="group"  onclick="toggleForm('testing_code')">
-                    <h2>Task 4: Test code</h2>
-                    <a href="\lab2\test_code.html" id="about-link" style=" text-decoration: none;">Click to view more</a>
+            
+<!--lab3  -->
+            <div id="lab3-content" class="lab-content">
+                <div class="group" onclick="toggleForm('lab3-container')" >
+                    <h2>Task 5: New Content for Lab 3</h2>
+                    <a href="lab3.html" id="about-link" style="text-decoration: none;">Click to view more</a>
                     
-                    <div id="testing_code" style="display: none;" >
-                        <Iframe class="frame_task4" src="lab2\test_code.html"></Iframe>
+                    <!-- Thêm iframe để hiển thị bài của bạn -->
+                    <div id="lab3-container" style="display: none;">
+                        <iframe class="lab3-iframe" src="lab3.html" width="100%" height="600px"></iframe>
+                    </div>
+                </div>
+            </div>
+<!-- LAB1 -->
+            <div id="lab1-content" class="lab-content active" onclick="toggleForm('lab1-iframe')">
+                <div class="group" onclick="toggleForm('lab1-container')" >
+                    <h2>Task 1: Create account </h2>
+                    <a href="lab1.html" id="about-link" style="text-decoration: none;">Click to view more</a>
+                    
+                    <!-- Thêm iframe để hiển thị bài của bạn -->
+                    <div id="lab1-container" style="display: none;">
+                        <iframe class="lab1-iframe" src="lab1.html" width="100%" height="600px"></iframe>
+                    </div>
+                </div>
+<!-- lab1 nhom2 -->
+                <div class="group" onclick="toggleForm('lab1n-container')" >
+                    <h2>Task 2: Course Management</h2>
+                    <a href="nhom2.html" id="about-link" style="text-decoration: none;">Click to view more</a>
+                    
+                    <!-- Thêm iframe để hiển thị bài của bạn -->
+                    <div id="lab1n-container" style="display: none;">
+                        <iframe class="nhom2" src="nhom2.html" width="100%" height="600px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+           
+
+<!-- lab2 -->
+            <div id="lab2-content" class="lab-content"  >
+                <div class="group"  onclick="toggleForm('login-lab')">
+                    <h2>Task 3:Login</h2>
+                    <a href="login.html" id="about-link"  style=" text-decoration: none;">Click to view more</a>
+                    
+                    <div id="login-lab" style="display: none;" >
+                        <Iframe class="frame_task3" src="login.html" width="100%" height="600px"></Iframe>
                     </div>
                     
                 </div>
 
+<!--demo testing code-->
+                <div class="group"  onclick="toggleForm('testing_code')">
+                    <h2>Task 4: Test code</h2>
+                    <a href="test_code.html" id="about-link" style=" text-decoration: none;">Click to view more</a>
+                    
+                    <div id="testing_code" style="display: none;" >
+                        <Iframe class="frame_task4" src="test_code.html" width="100%" height="600px"></Iframe>
+                    </div>
+                    
+                </div>
 
             </div>
 

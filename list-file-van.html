@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toán Đề</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        /* background-color: #0052CC;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 3px;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+
+        .sidebar button {
+            display: block;
+            padding: 10px 15px;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            margin-bottom: 10px;
+            background-color: #0052CC;
+            color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .sidebar button:hover {
+            background-color: #0e6eff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Content styles */
+        .content {
+            width: 80%;
+            padding: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .template-card {
+            background-color: white;
+            border-radius: 3px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        /* .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        } */
+        .template-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .template-name {
+            font-size: 20px;
+            color: #172B4D;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar with tabs -->
+    <div class="sidebar">
+        <div class="template-card">
+            <div class="template-icon" style="background-color: #FF5630;">📄</div>
+            <div class="template-name">Ngữ văn</div>
+        </div>
+        <button onclick="loadPdf('de-kiem-tra-toan-12-nam-2024-2025-truong-nguyen-khuyen-le-thanh-tong-tp-hcm-06-10-2024.pdf')">Toán Đề 1</button>
+        <button onclick="loadPdf('de-kiem-tra-toan-12-nam-2024-2025-truong-nguyen-khuyen-le-thanh-tong-tp-hcm-22-09-2024.pdf')">Toán Đề 2</button>
+        <a href="lab3.html" style="text-decoration: none;"><button > Back </button></a> 
+    </div>
+
+    <!-- Content area where the PDF will be displayed -->
+    <div class="content">
+        <iframe id="pdfFrame" src=""></iframe>
+    </div>
+
+    <script>
+        // JavaScript function to load the PDF file into the iframe
+        function loadPdf(pdfUrl) {
+            document.getElementById("pdfFrame").src = pdfUrl;
+        }
+    </script>
+
+</body>
+</html>
