@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f5f7;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #0052CC;
+}
+.create-button {
+    background-color: #0052CC;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+.templates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.template-card {
+    background-color: white;
+    border-radius: 3px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.template-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.template-name {
+    font-size: 14px;
+    color: #172B4D;
+}
+.selected {
+    border: 2px solid #0052CC;
+}
+a{
+    text-decoration: none;
+}

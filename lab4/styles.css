@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+.nav a {
+    text-decoration: none;
+    color: #333;
+}
+.welcome {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.streak-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.streak-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.streak-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #8a2be2;
+    border-radius: 50%;
+}
+.progress-ring {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #4caf50 120deg, 
+        #ffa500 120deg 240deg, 
+        #e0e0e0 240deg
+    );
+}
+.courses {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.course-tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+.course-tabs a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.cert-list {
+    display: flex;
+    flex-wrap: wrap;              /* Cho phép thẻ xuống dòng khi không đủ chỗ */
+    gap: 20px;                    /* Khoảng cách giữa các thẻ */
+    justify-content: space-around; /* Căn đều các thẻ */
+}
+
+.cert-item {
+    width: 100%;
+    max-width: 300px;              /* Mỗi thẻ có thể mở rộng đến 300px */
+    flex: 1 1 200px;               /* Tối thiểu mỗi thẻ là 200px và có thể mở rộng */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cert-image img {
+    width: 50px;
+    height: 120px;
+    object-fit: cover;            /* Đảm bảo hình ảnh co giãn hợp lý mà không bị biến dạng */
+}
+
+@media (max-width: 768px) {
+    .cert-item {
+        width: 100%;               /* Trên màn hình nhỏ, thẻ sẽ chiếm toàn bộ chiều rộng */
+        margin-bottom: 20px;        /* Khoảng cách giữa các thẻ khi xuống dòng */
+    }
+}
+
+@media (min-width: 769px) {
+    .cert-item {
+        flex: 1 1 calc(33.333% - 20px); /* Chia đều thẻ trên 3 cột cho màn hình lớn */
+        margin: 10px;
+    }
+}
+
+
+.course-item {
+    width: 200px;
+    margin-right: 20px;
+}
+.course-image {
+    width: 100%;
+    height: 120px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+}
+.certifications {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+.cert-list {
+    display: flex;
+    overflow-x: auto;
+}
+.cert-item {
+    width: 200px;
+    margin-right: 20px;
+}
+.cert-image {
+    width: 100%;
+    height: 120px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+}
+.personalize {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+a,
+.nav a {
+text-decoration: none;
+color: #333;
+padding: 10px;
+transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav a:hover {
+    color: #8a2be2; /* Change to your preferred hover color */
+    /* text-decoration: underline; */
+}
+

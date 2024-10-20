@@ -3,147 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Navigation with Form</title>
-  
-    <link rel="stylesheet" href="index_style.css">
+    <title>Simple Website with Labs</title>
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#" id="home-link" onclick="showContent('home')">Home</a></li>
-                <li><a href="#" id="about-link" onclick="showContent('about')">About</a></li>
-                <li><a href="#" id="labs-link" class="active" onclick="showContent('labs')">Labs</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <!-- Home Section -->
-        <section id="home" class="content-section">
+    <nav>
+        <ul>
+            <li><a href="#home" class="active" onclick="showTab('home')">Home</a></li>
+            <li><a href="#about" onclick="showTab('about')">About</a></li>
+            <li><a href="#labs" >Labs</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div id="home" class="tab-content" style="display: contents;">
+            <!-- <h1>Welcome to Our Website</h1>
+            <p>This is the home page content.</p> -->
+            <div class="container">
+                <header>
+                    <br>
+                    <h1>Trường Đại học Nông Lâm Thành phố Hồ Chí Minh</h1>
+                    <p>Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+                </header>
+        
+                <section class="intro">
+                    <h2>Giới Thiệu</h2>
+                    <p>Trường Đại học Nông Lâm Thành phố Hồ Chí Minh là một trong những trường đại học đa ngành lâu đời và lớn nhất tại Việt Nam. Trường tọa lạc trên khu đất rộng 118 ha, nằm tại phường Linh Trung, thành phố Thủ Đức, Thành phố Hồ Chí Minh và một phần tại phường Đông Hòa, thành phố Dĩ An, tỉnh Bình Dương.</p>
+                    <img src="https://lambangdaihocphoithat.com/wp-content/uploads/2024/06/Truong-Dai-hoc-Nong-Lam-TP.HCM-2024-1278x800.jpg?v=1717252998" width="100%" height="100%" >
+                
+                </section>
+        
+                <section class="history">
+                    <h2>Lịch Sử Hình Thành và Phát Triển</h2>
+                    <p>Tiền thân của trường là Trường Quốc gia Nông Lâm Mục Bảo Lộc, thành lập ngày 19/11/1955. Qua nhiều lần đổi tên và phát triển, đến năm 2000, trường chính thức mang tên Trường Đại học Nông Lâm Thành phố Hồ Chí Minh trực thuộc Bộ Giáo dục và Đào tạo.</p>
+                    <p>Trong suốt 67 năm xây dựng, trường đã đạt được nhiều thành tựu đáng kể trong lĩnh vực đào tạo, nghiên cứu khoa học, ứng dụng kỹ thuật trong nông lâm ngư nghiệp, và chuyển giao công nghệ. Trường đã nhận nhiều huân chương cao quý từ Nhà nước.</p>
+                </section>
+        
+                <section class="education">
+                    <h2>Đào Tạo và Nghiên Cứu</h2>
+                    <p>Trường là trung tâm nghiên cứu và đào tạo lớn trong lĩnh vực nông lâm ngư nghiệp, cung cấp nguồn nhân lực chất lượng cao cho xã hội. Nhiều cựu sinh viên của trường đã trở thành những nhà khoa học, nhà quản lý, và giáo viên ưu tú.</p>
+                </section>
+        
+                <section class="certification">
+                    <h2>Chứng Nhận và Chất Lượng</h2>
+                    <p>Trường đã đạt chuẩn kiểm định chất lượng cơ sở giáo dục và có 10 chương trình đào tạo đạt chuẩn AUN-QA, khẳng định vị thế trong hệ thống giáo dục đại học Việt Nam.</p>
+                </section>
+        
+                <section class="mission">
+                    <h2>Nhiệm Vụ Chính</h2>
+                    <ul>
+                        <li>Đào tạo nguồn nhân lực chất lượng cao về khoa học - công nghệ, kinh tế - quản lý, sư phạm - ngoại ngữ.</li>
+                        <li>Nghiên cứu khoa học nhằm phục vụ phát triển kinh tế - xã hội và bảo vệ môi trường.</li>
+                        <li>Chuyển giao tiến bộ khoa học kỹ thuật cho cộng đồng sản xuất.</li>
+                    </ul>
+                </section>
+        
+                <section class="structure">
+                    <h2>Cơ Cấu Tổ Chức</h2>
+                    <p>Trường có 38 đơn vị trực thuộc, bao gồm 13 khoa, 1 bộ môn, 1 viện, 11 phòng chức năng, 5 trung tâm nghiên cứu, 2 phân hiệu tại Gia Lai và Ninh Thuận.</p>
+                </section>
+        
+                <section class="programs">
+                    <h2>Chương Trình Đào Tạo</h2>
+                    <ul>
+                        <li>Bậc đại học: 62 ngành/chuyên ngành</li>
+                        <li>Bậc thạc sĩ: 16 chuyên ngành</li>
+                        <li>Bậc tiến sĩ: 12 chuyên ngành</li>
+                    </ul>
+                </section>
+        
+                <section class="vision">
+                    <h2>Tầm Nhìn và Sứ Mệnh</h2>
+                    <p>Trường luôn nỗ lực giữ vững truyền thống tốt đẹp và phát triển bền vững. Là cơ sở đào tạo trình độ cao và trung tâm nghiên cứu, chuyển giao khoa học - công nghệ, trường tự hào là địa chỉ đáng tin cậy cho nhà đầu tư, doanh nghiệp trong và ngoài nước.</p>
+                </section>
+        
+                <section class="contact">
+                    <h2>Địa Chỉ Liên Hệ</h2>
+                    <p><strong>Địa chỉ:</strong> Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+                    <p><strong>Điện thoại:</strong> (84) 028.38966780, (84) 028.38960711</p>
+                    <p><strong>Fax:</strong> (84) 028.38960713</p>
+                    <p><strong>Website:</strong> <a href="https://www.hcmuaf.edu.vn">https://www.hcmuaf.edu.vn</a></p>
+                    <p><strong>Email:</strong> vphanhchinh@hcmuaf.edu.vn</p>
+                </section>
+            </div>
+        </div>
+    
+        <div id="about" class="tab-content" style="display: none;">
+            <div class="container">
+                <header>
+                    <h1>Nguyen Huu Duy</h1>
+                    <p class="location">Nông Lâm University, Ho Chi Minh City, Vietnam</p>
+                </header>
+        
+                <section class="summary">
+                    <h2>Summary</h2>
+                    <p>
+                        I am a passionate backend developer currently learning Java with a strong desire to contribute to 
+                        real-world IT projects. I have a deep interest in server-side logic, database management, and 
+                        API integration. I thrive in collaborative environments and am committed to developing scalable and efficient systems.
+                    </p>
+                </section>
+        
+                <section class="education">
+                    <h2>Education</h2>
+                    <p>
+                        <strong>Nông Lâm University</strong> - Ho Chi Minh City, Vietnam<br>
+                        <em>Bachelor of Information Technology</em> - Expected Graduation: 2025<br>
+                        - Relevant courses: Object-Oriented Programming, Data Structures, Algorithms, Database Management, and Web Development.
+                    </p>
+                </section>
+        
+                <section class="skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li><strong>Programming Languages:</strong> Java, Python, JavaScript</li>
+                        <li><strong>Backend Development:</strong> Java Spring Boot, RESTful API, Microservices</li>
+                        <li><strong>Databases:</strong> MySQL, MongoDB</li>
+                        <li><strong>Version Control:</strong> Git, GitHub</li>
+                        <li><strong>Problem Solving:</strong> Algorithm Optimization, Debugging</li>
+                        <li><strong>Teamwork:</strong> Agile Methodologies, SCRUM, Communication Skills</li>
+                    </ul>
+                </section>
+        
+                <section class="experience">
+                    <h2>Experience</h2>
+                    <p><strong>Personal Projects:</strong></p>
+                    <ul>
+                        <li>
+                            <strong>Student Management System</strong> (Java, MySQL) <br>
+                            - Developed a desktop application to manage student information for a small school.<br>
+                            - Implemented features such as CRUD operations, data filtering, and report generation.
+                        </li>
+                        <li>
+                            <strong>Weather Forecast API Integration</strong> (Java, Spring Boot) <br>
+                            - Built a RESTful API that integrates with a third-party weather service.<br>
+                            - The application provides real-time weather data and forecasts based on city inputs.
+                        </li>
+                    </ul>
+                </section>
+        
+                <section class="activities">
+                    <h2>Extracurricular Activities</h2>
+                    <p>
+                        <strong>Member of IT Club</strong> - Nông Lâm University <br>
+                        - Participated in coding competitions, hackathons, and regular club meetings to discuss new technologies and IT trends.
+                    </p>
+                </section>
+        
+                <section class="goals">
+                    <h2>Goals</h2>
+                    <p>
+                        My goal is to master Java backend development and gain proficiency in frameworks such as Spring Boot. 
+                        I aim to work on large-scale enterprise applications and enhance my skills in distributed systems, 
+                        cloud computing, and database optimization.
+                    </p>
+                </section>
+        
+                <!-- <footer>
+                    <p>Contact: [duynguyenavg@gmail] | [039 8167 244]</p>
+                </footer> -->
+            </div>
+
+
+        </div>
+
+        <br>
+        <div id="labs" style="display:none; height: 100%;" >
+            <h1>Labs</h1>
+            <div id="fix-bug" style="height: 1500px;">
+
             
-            <iframe class="" src="nlu-intro.html" width="100%" height="3000px"></iframe>
-        </section>
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'Lab1')">Lab 1</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab2')">Lab 2</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab3')">Lab 3</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab4')">Lab 4</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab5')">Lab 5</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab6')">Lab 6</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab7')">Lab 7</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab8')">Lab 8</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab9')">Lab 9</button>
+                    <button class="tab-button" onclick="openTab(event, 'Lab10')">Lab 10</button>
+                </div>
 
-        <!-- About Section -->
-        <section id="about" class="content-section">
-            <!-- <h1>My About</h1>
-            <p>Information about me.</p> -->
-            <iframe class="" src="cv.html" width="100%" height="1500px"></iframe>
+                <div id="Lab1" class="tab-content active"  style="display: block;" >
+                    <h2>Lab 1</h2>
+                    <div class="blocks">
+                        <div class="block" onclick="toggleForm('lab1-container')">
+                            <div class="block-icon">📘</div>
+                            <h3>Lab: Create account</h3>
+                            <a href="lab1\lab1.html" >Lab details</a>
+                        </div>                    
+                        <!-- lab1 -->
+                        <div id="lab1-container" class="lab-content-form" style="display: none;">
+                            <iframe class="lab1-iframe" src="lab1\lab1.html" ></iframe>
+                        </div>
+                        <!-- lab2 -->
+                    </div>
+                </div>
 
-        </section>
+                <div id="Lab2" class="tab-content"  >
+                    <h2>Lab 2</h2>
+                    <div class="blocks"  onclick="toggleForm('lab2-container')">
+                        <div class="block">
+                            <div class="block-icon">📘</div>
+                            <h3>Lab: Login frame</h3>
+                            <a href="lab2\login.html" >Lab details</a>
+                    
+                        </div>
+                    
+                        <div class="block" onclick="toggleForm('lab2-n2-container')">
+                            <div class="block-icon">🧪</div>
+                            <h3>lab: testing</h3>
+                            <a href="lab2\test_code.html" >Lab details</a>
+                        </div>
+                        <!-- lab1 -->
+                        <div id="lab2-container" class="lab-content-form" style="display: none;">
+                            <iframe class="lab1-iframe" src="lab2\login.html" ></iframe>
+                        </div>
+                        <!-- lab2 -->
+                        <div id="lab2-n2-container" class="lab-content-form" style="display: none;">
+                            <iframe class="lab1-iframe" src="lab2\test_code.html" ></iframe>
+                        </div>
+                    </div>
+                </div> <!-- Thêm dấu đóng ở đây -->
 
-        <!-- Labs Section -->
-        <section id="labs" class="content-section active">
-            <div class="tabs">
-                <span class="tab active" onclick="showLab('lab1')">Lab 1</span>
-                <span class="tab" onclick="showLab('lab2')">Lab 2</span>
-                <span class="tab3" onclick="showLab('lab3')">Lab 3</span>
-            </div>
+                <div id="Lab3" class="tab-content">
+                    <h2>Lab 3</h2>
+                    <div class="blocks">
+                        <div class="block"  onclick="toggleForm('lab3-container')" >
+                            <div class="block-icon">📘</div>
+                            <h3>Lab Work</h3>
+                            <a href="lab3\lab3.html" >Lab details</a>
+                        </div>
+                        <!-- lab2 -->
+                        <div id="lab3-container" class="lab-content-form" style="display: none;">
+                            <iframe class="lab1-iframe" src="lab3\lab3.html" ></iframe>
+                        </div>
+                        
+                    </div>
+                </div> <!-- Thêm dấu đóng ở đây -->
             
-<!--lab3  -->
-            <div id="lab3-content" class="lab-content">
-                <div class="group" onclick="toggleForm('lab3-container')" >
-                    <h2>Task 5: New Content for Lab 3</h2>
-                    <a href="lab3.html" id="about-link" style="text-decoration: none;">Click to view more</a>
-                    
-                    <!-- Thêm iframe để hiển thị bài của bạn -->
-                    <div id="lab3-container" style="display: none;">
-                        <iframe class="lab3-iframe" src="lab3.html" width="100%" height="600px"></iframe>
+                <div id="Lab4" class="tab-content">
+                    <h2>Lab 4</h2>
+                    <div class="blocks">
+                        <div class="block"  onclick="toggleForm('lab4-container')" >
+                            <div class="block-icon">🧪</div>
+                            <h3>Lab : Udemy page</h3>
+                            <a href="lab4/lab4.html">Lab details</a>
+                        </div>
+                        <!-- lab 4 -->
+                        <div id="lab4-container" class="lab-content-form" style="display: none;">
+                            <iframe class="lab1-iframe" src="lab4\lab4.html" ></iframe>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Thêm dấu đóng ở đây -->
+                <div id="Lab5" class="tab-content">
+                    <h2>Lab 5</h2>
+                    <div class="blocks">
+                        <div class="block">
+                            <div class="block-icon">📘</div>
+                            <h3>Lab Work</h3>
+                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">💡</div>
+                            <h3>Ideas</h3>
+                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">🧪</div>
+                            <h3>Experiments</h3>
+                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
+                        </div>
+                    </div>
+                </div>  
+                <!-- Thêm dấu đóng ở đây -->
+                <div id="Lab6" class="tab-content">
+                    <h2>Lab 6</h2>
+                    <div class="blocks">
+                        <div class="block">
+                            <div class="block-icon">📘</div>
+                            <h3>Lab Work</h3>
+                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">💡</div>
+                            <h3>Ideas</h3>
+                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">🧪</div>
+                            <h3>Experiments</h3>
+                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
+                        </div>
+                    </div>
+                </div>  
+                <!-- Thêm dấu đóng ở đây -->
+                <div id="Lab7" class="tab-content">
+                    <h2>Lab 7</h2>
+                    <div class="blocks">
+                        <div class="block">
+                            <div class="block-icon">📘</div>
+                            <h3>Lab Work</h3>
+                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">💡</div>
+                            <h3>Ideas</h3>
+                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">🧪</div>
+                            <h3>Experiments</h3>
+                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
+                        </div>
+                    </div>
+                </div>  
+                <!-- Thêm dấu đóng ở đây -->
+                <div id="Lab8" class="tab-content">
+                    <h2>Lab 8</h2>
+                    <div class="blocks">
+                        <div class="block">
+                            <div class="block-icon">📘</div>
+                            <h3>Lab Work</h3>
+                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">💡</div>
+                            <h3>Ideas</h3>
+                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">🧪</div>
+                            <h3>Experiments</h3>
+                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
+                        </div>
+                    </div>
+                </div>  
+                <!-- Thêm dấu đóng ở đây -->
+                <div id="Lab9" class="tab-content">
+                    <h2>Lab 9</h2>
+                    <div class="blocks">
+                        <div class="block">
+                            <div class="block-icon">📘</div>
+                            <h3>Lab Work</h3>
+                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">💡</div>
+                            <h3>Ideas</h3>
+                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">🧪</div>
+                            <h3>Experiments</h3>
+                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
+                        </div>
+                    </div>
+                </div>  
+                <!-- Thêm dấu đóng ở đây -->
+                <div id="Lab10" class="tab-content">
+                    <h2>Lab 10</h2>
+                    <div class="blocks">
+                        <div class="block">
+                            <div class="block-icon">📘</div>
+                            <h3>Lab Work</h3>
+                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">💡</div>
+                            <h3>Ideas</h3>
+                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
+                        </div>
+                        <div class="block">
+                            <div class="block-icon">🧪</div>
+                            <h3>Experiments</h3>
+                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
+                        </div>
+                    </div>
+                </div>  
             </div>
-<!-- LAB1 -->
-            <div id="lab1-content" class="lab-content active" onclick="toggleForm('lab1-iframe')">
-                <div class="group" onclick="toggleForm('lab1-container')" >
-                    <h2>Task 1: Create account </h2>
-                    <a href="lab1.html" id="about-link" style="text-decoration: none;">Click to view more</a>
-                    
-                    <!-- Thêm iframe để hiển thị bài của bạn -->
-                    <div id="lab1-container" style="display: none;">
-                        <iframe class="lab1-iframe" src="lab1.html" width="100%" height="600px"></iframe>
-                    </div>
-                </div>
-<!-- lab1 nhom2 -->
-                <div class="group" onclick="toggleForm('lab1n-container')" >
-                    <h2>Task 2: Course Management</h2>
-                    <a href="nhom2.html" id="about-link" style="text-decoration: none;">Click to view more</a>
-                    
-                    <!-- Thêm iframe để hiển thị bài của bạn -->
-                    <div id="lab1n-container" style="display: none;">
-                        <iframe class="nhom2" src="nhom2.html" width="100%" height="600px"></iframe>
-                    </div>
-                </div>
+          
+          <!-- Thêm dấu đóng ở đây -->
+        </div>
+      
+    
+    </div>
+      <!-- footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are dedicated to providing the best educational resources and information.</p>
             </div>
-
-
-
-            
-           
-
-<!-- lab2 -->
-            <div id="lab2-content" class="lab-content"  >
-                <div class="group"  onclick="toggleForm('login-lab')">
-                    <h2>Task 3:Login</h2>
-                    <a href="login.html" id="about-link"  style=" text-decoration: none;">Click to view more</a>
-                    
-                    <div id="login-lab" style="display: none;" >
-                        <Iframe class="frame_task3" src="login.html" width="100%" height="600px"></Iframe>
-                    </div>
-                    
-                </div>
-
-<!--demo testing code-->
-                <div class="group"  onclick="toggleForm('testing_code')">
-                    <h2>Task 4: Test code</h2>
-                    <a href="test_code.html" id="about-link" style=" text-decoration: none;">Click to view more</a>
-                    
-                    <div id="testing_code" style="display: none;" >
-                        <Iframe class="frame_task4" src="test_code.html" width="100%" height="600px"></Iframe>
-                    </div>
-                    
-                </div>
-
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#labs">Labs</a></li>
+                </ul>
             </div>
-
-        </section>
-    </main>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: 23130075@st.hcmuaf.edu.vn.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 James Nguyen | 23130075 | All Rights Reserved</p>
+        </div>
+    </footer>
 
     <script>
-        // Function to show the correct content section based on the clicked link
-        function showContent(section) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(sec => {
-                sec.classList.remove('active');
-            });
-
-            // Remove active class from all links
-            document.querySelectorAll('nav ul li a').forEach(link => {
-                link.classList.remove('active');
-            });
-
-            // Show the selected section and add active class to the clicked link
-            document.getElementById(section).classList.add('active');
-            document.getElementById(section + '-link').classList.add('active');
-        }
-
-        // Function to show the correct Lab content (Lab 1 or Lab 2)
-        function showLab(lab) {
-            // Hide both lab contents
-            document.querySelectorAll('.lab-content').forEach(labContent => {
-                labContent.classList.remove('active');
-            });
-
-            // Remove active class from all tabs
-            document.querySelectorAll('.tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
-
-            // Show the selected lab content and add active class to the clicked tab
-            document.getElementById(lab + '-content').classList.add('active');
-            document.querySelector(`.tab[onclick="showLab('${lab}')"]`).classList.add('active');
-        }
-
         // Function to toggle the visibility of the form
         function toggleForm(formId) {
           const formContainer = document.getElementById(formId);
@@ -152,21 +428,63 @@
           }
         }
 
-        // Function to toggle password visibility
-        function togglePassword() {
-            const passwordField = document.getElementById('password');
-            if (passwordField.type === "text") {
-                passwordField.type = "password";
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Simple navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+
+                let target = this.getAttribute('href').substring(1);
+                document.querySelectorAll('.container > div').forEach(div => div.style.display = 'none');
+                document.getElementById(target).style.display = 'block';
+            });
+        });
+
+        function showTab(tabName) {
+            // Ẩn tất cả nội dung các tab
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            // Hiển thị tab được nhấn
+            document.getElementById(tabName).style.display = "block";
+
+            // Đặt lại trạng thái "active" cho các link
+            tabLinks = document.querySelectorAll("nav ul li a");
+            tabLinks.forEach(function(link) {
+                link.classList.remove("active");
+            });
+
+            // Thêm class "active" cho tab hiện tại
+            event.currentTarget.classList.add("active");
+        }
+
+        function toggleForm(formId) {
+            var form = document.getElementById(formId);
+            if (form.style.display === "none") {
+                form.style.display = "block";
             } else {
-                passwordField.type = "text";
+                form.style.display = "none";
             }
         }
 
-        // Initially show the Labs content by default
-        document.addEventListener('DOMContentLoaded', function() {
-            showContent('labs');
-            showLab('lab1');
-        });
     </script>
 </body>
 </html>
