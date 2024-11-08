@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Custom Challenge</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 5px 5px 0 0;
+        }
+        .custom-btn {
+            background-color: #0069d9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+        }
+        .text-muted-info {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        .dropdown-section, .test-case-section {
+            margin-top: 20px;
+        }
+        .styled-bar {
+            background-color: #1c2a39;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        .styled-bar i {
+            color: #00c851;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container my-5">
+    <div class="card">
+        <div class="modal-header">
+            <h5 class="modal-title">Edit custom challenge</h5>
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <div class="card-body">
+            <p class="text-muted-info">Last modified by sontth1@fpt.com on Apr 01 2024</p>
+            <form>
+                <!-- Existing form elements -->
+                <div class="mb-3">
+                    <label for="challengeName" class="form-label">Challenge Name</label>
+                    <input type="text" class="form-control" id="challengeName" placeholder="DSA ET Opt7 01" value="DSA ET Opt7 01">
+                </div>
+                <div class="mb-3">
+                    <label for="difficulty" class="form-label">Difficulty</label>
+                    <select class="form-select" id="difficulty">
+                        <option selected>Easy</option>
+                        <option>Medium</option>
+                        <option>Hard</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="shortDescription" class="form-label">Short description</label>
+                    <input type="text" class="form-control" id="shortDescription" placeholder="This is a private challenge" value="This is a private challenge">
+                </div>
+                <div class="mb-3">
+                    <label for="challengeDetails" class="form-label">Details</label>
+                    <textarea class="form-control" id="challengeDetails" rows="5">Write a program to count the number of elements as odd numbers in the array
+Example: Array A = {12, 31, 25, 17, 40, 10, 29}
+=> Number of elements as odd number in array A is: 4</textarea>
+                </div>
+
+                <div class="styled-bar">
+                    <i class="bi bi-check-circle-fill"></i> <!-- Icon from Bootstrap Icons -->
+                    Starter code will automatically be generated for all 18 coding languages
+                </div>
+
+                <!-- New Section for Input Type and Output Type -->
+                <div class="dropdown-section d-flex justify-content-between">
+                    <div class="mb-3">
+                        <label for="inputType" class="form-label">Input type</label>
+                        <select class="form-select" id="inputType">
+                            <option selected>Array of integers</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="outputType" class="form-label">Output type</label>
+                        <select class="form-select" id="outputType">
+                            <option selected>Integer</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- New Section for Test Cases -->
+                <div class="test-case-section">
+                    <label class="form-label">Required test cases <span class="text-muted-info">(Hover for help)</span></label>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="12, 31, 25, 17, 40, 10, 29">
+                        <input type="text" class="form-control" value="4">
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="1,2,3,4,5,6,7,8,9,10">
+                        <input type="text" class="form-control" value="5">
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20">
+                        <input type="text" class="form-control" value="10">
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="0">
+                        <input type="text" class="form-control" value="0">
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="1">
+                        <input type="text" class="form-control" value="1">
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="0,2,4,6,8,10">
+                        <input type="text" class="form-control" value="0">
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="1,3,5">
+                        <input type="text" class="form-control" value="3">
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="8,8,8,8,8,8,8,8,8">
+                        <input type="text" class="form-control" value="0">
+                    </div>
+                    <div class="mb-2 d-flex">
+                        <input type="text" class="form-control me-2" value="1,1,1,1,1,1,1,1,1,1,1,1,1">
+                        <input type="text" class="form-control" value="13">
+                    </div>
+                </div>
+
+                <!-- Update Button -->
+                <div class="text-end">
+                    <button type="button" class="custom-btn mt-3">Update custom challenge</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
