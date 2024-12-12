@@ -8,7 +8,7 @@ body {
 
 /* Adjust navigation bar */
 nav {
-    background-color: #333333;
+    background-color: #2C3E4F;
     color: #ffffff;
     padding: 1rem 0;
     width: 100%;
@@ -17,6 +17,10 @@ nav {
 a {
     text-decoration: none;
     color:  #000000;
+}
+
+h3{
+    color: #000;
 }
 
 nav ul {
@@ -35,10 +39,19 @@ nav ul li {
 nav ul li a {
     color: #fff5f5;
     text-decoration: none;
+    margin-right: 10px;
+    font-size: 15px;
 }
 
+.active-v2{
+    font-weight: bold;
+   color:  #E54D42 ;
+   font-size: 18px;
+}
 .active {
     font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
 }
 
 .container {
@@ -63,11 +76,11 @@ nav ul li a {
 }
 /* hover */
 .tab-button:hover {
-    background-color: #c0eb6a7c;
+    background-color: #E54D42 ;
 }
 
 .tab-button.active {
-    background-color: #c0eb6acd;
+    background-color:#E54D42 ;
 }
 
 .tab-content {
@@ -81,6 +94,7 @@ nav ul li a {
 .tab-content.active {
     display: block;
 }
+
 
 /* Make the Lab section larger */
 #labs {

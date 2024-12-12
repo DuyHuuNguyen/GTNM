@@ -1,481 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Website with Labs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Fables">
+    <meta name="author" content="Enterprise Development">
+    <link rel="shortcut icon" href="assets/custom/images/shortcut.png">
+
+    <title>Home</title>
+    
+    <!-- animate.css-->  
+    <link href="assets/vendor/animate.css-master/animate.min.css" rel="stylesheet">
+    <!-- Load Screen -->
+    <link href="assets/vendor/loadscreen/css/spinkit.css" rel="stylesheet">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <!-- Font Awesome 5 -->
+    <link href="assets/vendor/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- Fables Icons -->
+    <link href="assets/custom/css/fables-icons.css" rel="stylesheet"> 
+    <!-- Bootstrap CSS --> 
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap-4-navbar.css" rel="stylesheet">
+    <!-- portfolio filter gallery -->
+    <link href="assets/vendor/portfolio-filter-gallery/portfolio-filter-gallery.css" rel="stylesheet">
+    <!-- Video Background -->
+    <link href="assets/vendor/video-background/video-background.css" rel="stylesheet"> 
+    <!-- FANCY BOX -->
+    <link href="assets/vendor/fancybox-master/jquery.fancybox.min.css" rel="stylesheet"> 
+    <!-- RANGE SLIDER -->
+    <link href="assets/vendor/range-slider/range-slider.css" rel="stylesheet">
+    <!-- OWL CAROUSEL  --> 
+    <link href="assets/vendor/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/owlcarousel/owl.theme.default.min.css" rel="stylesheet">
+    <!-- FABLES CUSTOM CSS FILE -->
+    <link href="assets/custom/css/custom.css" rel="stylesheet">
+    <!-- FABLES CUSTOM CSS RESPONSIVE FILE -->
+    <link href="assets/custom/css/custom-responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
+
+
+    <style>
+        .header-slider {
+          position: relative;
+          width: 100%;
+          height: 400px;
+          overflow: hidden;
+      }
+
+      .slider-container {
+          position: absolute;
+          display: flex;
+          width: 500%; /* 100% * 5 images */
+          height: 100%;
+          transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+          width: 20%; /* 100% / 5 images */
+          height: 100%;
+          position: relative;
+      }
+
+      .slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+
+      .slide-content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          text-align: center;
+          z-index: 2;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      }
+
+      .slide::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.3);
+      }
+
+      .slider-nav {
+          position: absolute;
+          bottom: 20px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 10px;
+          z-index: 3;
+      }
+
+      .nav-dot {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.5);
+          cursor: pointer;
+          transition: background 0.3s ease;
+      }
+
+      .nav-dot.active {
+          background: white;
+      }
+
+      .slider-arrows {
+          position: absolute;
+          width: 100%;
+          top: 50%;
+          transform: translateY(-50%);
+          display: flex;
+          justify-content: space-between;
+          padding: 0 20px;
+          z-index: 3;
+      }
+
+      .arrow {
+          width: 40px;
+          height: 40px;
+          background: rgba(255,255,255,0.3);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: background 0.3s ease;
+      }
+
+      .arrow:hover {
+          background: rgba(255,255,255,0.5);
+      }
+
+      @keyframes fadeIn {
+          from {
+              opacity: 0;
+              transform: translateY(20px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+
+      .slide-content h2 {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      .slide-content p {
+          font-size: 1.2rem;
+          animation: fadeIn 0.8s ease-out 0.3s forwards;
+          opacity: 0;
+      }
+ 
+  
+  </style>
+    
+  
+    
+     
 </head>
+
+
 <body>
-    <nav>
+
+
+
+    <nav style="height: 50px;">
         <ul>
-            <li><a href="#home" class="active" onclick="showTab('home')">Home</a></li>
-            <li><a href="#about" onclick="showTab('about')">About</a></li>
-            <li><a href="#labs" >Labs</a></li>
+            <li><a href="index.html" class="active-v2">Home</a></li>
+            <li><a href="cv.html" >About</a></li>
+            <li><a href="labs.html" >Labs</a></li>
         </ul>
     </nav>
     
-    <div class="container">
-        <div id="home" class="tab-content" style="display: contents;">
-            <!-- <h1>Welcome to Our Website</h1>
-            <p>This is the home page content.</p> -->
-            <div class="container">
-                <header>
-                    <br>
-                    <h1>Trường Đại học Nông Lâm Thành phố Hồ Chí Minh</h1>
-                    <p>Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh</p>
-                </header>
-        
-                <section class="intro">
-                    <h2>Giới Thiệu</h2>
-                    <p>Trường Đại học Nông Lâm Thành phố Hồ Chí Minh là một trong những trường đại học đa ngành lâu đời và lớn nhất tại Việt Nam. Trường tọa lạc trên khu đất rộng 118 ha, nằm tại phường Linh Trung, thành phố Thủ Đức, Thành phố Hồ Chí Minh và một phần tại phường Đông Hòa, thành phố Dĩ An, tỉnh Bình Dương.</p>
-                    <img src="https://lambangdaihocphoithat.com/wp-content/uploads/2024/06/Truong-Dai-hoc-Nong-Lam-TP.HCM-2024-1278x800.jpg?v=1717252998" width="100%" height="100%" >
-                
-                </section>
-        
-                <section class="history">
-                    <h2>Lịch Sử Hình Thành và Phát Triển</h2>
-                    <p>Tiền thân của trường là Trường Quốc gia Nông Lâm Mục Bảo Lộc, thành lập ngày 19/11/1955. Qua nhiều lần đổi tên và phát triển, đến năm 2000, trường chính thức mang tên Trường Đại học Nông Lâm Thành phố Hồ Chí Minh trực thuộc Bộ Giáo dục và Đào tạo.</p>
-                    <p>Trong suốt 67 năm xây dựng, trường đã đạt được nhiều thành tựu đáng kể trong lĩnh vực đào tạo, nghiên cứu khoa học, ứng dụng kỹ thuật trong nông lâm ngư nghiệp, và chuyển giao công nghệ. Trường đã nhận nhiều huân chương cao quý từ Nhà nước.</p>
-                </section>
-        
-                <section class="education">
-                    <h2>Đào Tạo và Nghiên Cứu</h2>
-                    <p>Trường là trung tâm nghiên cứu và đào tạo lớn trong lĩnh vực nông lâm ngư nghiệp, cung cấp nguồn nhân lực chất lượng cao cho xã hội. Nhiều cựu sinh viên của trường đã trở thành những nhà khoa học, nhà quản lý, và giáo viên ưu tú.</p>
-                </section>
-        
-                <section class="certification">
-                    <h2>Chứng Nhận và Chất Lượng</h2>
-                    <p>Trường đã đạt chuẩn kiểm định chất lượng cơ sở giáo dục và có 10 chương trình đào tạo đạt chuẩn AUN-QA, khẳng định vị thế trong hệ thống giáo dục đại học Việt Nam.</p>
-                </section>
-        
-                <section class="mission">
-                    <h2>Nhiệm Vụ Chính</h2>
-                    <ul>
-                        <li>Đào tạo nguồn nhân lực chất lượng cao về khoa học - công nghệ, kinh tế - quản lý, sư phạm - ngoại ngữ.</li>
-                        <li>Nghiên cứu khoa học nhằm phục vụ phát triển kinh tế - xã hội và bảo vệ môi trường.</li>
-                        <li>Chuyển giao tiến bộ khoa học kỹ thuật cho cộng đồng sản xuất.</li>
-                    </ul>
-                </section>
-        
-                <section class="structure">
-                    <h2>Cơ Cấu Tổ Chức</h2>
-                    <p>Trường có 38 đơn vị trực thuộc, bao gồm 13 khoa, 1 bộ môn, 1 viện, 11 phòng chức năng, 5 trung tâm nghiên cứu, 2 phân hiệu tại Gia Lai và Ninh Thuận.</p>
-                </section>
-        
-                <section class="programs">
-                    <h2>Chương Trình Đào Tạo</h2>
-                    <ul>
-                        <li>Bậc đại học: 62 ngành/chuyên ngành</li>
-                        <li>Bậc thạc sĩ: 16 chuyên ngành</li>
-                        <li>Bậc tiến sĩ: 12 chuyên ngành</li>
-                    </ul>
-                </section>
-        
-                <section class="vision">
-                    <h2>Tầm Nhìn và Sứ Mệnh</h2>
-                    <p>Trường luôn nỗ lực giữ vững truyền thống tốt đẹp và phát triển bền vững. Là cơ sở đào tạo trình độ cao và trung tâm nghiên cứu, chuyển giao khoa học - công nghệ, trường tự hào là địa chỉ đáng tin cậy cho nhà đầu tư, doanh nghiệp trong và ngoài nước.</p>
-                </section>
-        
-                <section class="contact">
-                    <h2>Địa Chỉ Liên Hệ</h2>
-                    <p><strong>Địa chỉ:</strong> Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh</p>
-                    <p><strong>Điện thoại:</strong> (84) 028.38966780, (84) 028.38960711</p>
-                    <p><strong>Fax:</strong> (84) 028.38960713</p>
-                    <p><strong>Website:</strong> <a href="https://www.hcmuaf.edu.vn">https://www.hcmuaf.edu.vn</a></p>
-                    <p><strong>Email:</strong> vphanhchinh@hcmuaf.edu.vn</p>
-                </section>
-            </div>
-        </div>
-    
-        <div id="about" class="tab-content" style="display: none;">
-            <div class="container">
-                <header>
-                    <h1>Nguyen Huu Duy</h1>
-                    <p class="location">Nông Lâm University, Ho Chi Minh City, Vietnam</p>
-                </header>
-        
-                <section class="summary">
-                    <h2>Summary</h2>
-                    <p>
-                        I am a passionate backend developer currently learning Java with a strong desire to contribute to 
-                        real-world IT projects. I have a deep interest in server-side logic, database management, and 
-                        API integration. I thrive in collaborative environments and am committed to developing scalable and efficient systems.
-                    </p>
-                </section>
-        
-                <section class="education">
-                    <h2>Education</h2>
-                    <p>
-                        <strong>Nông Lâm University</strong> - Ho Chi Minh City, Vietnam<br>
-                        <em>Bachelor of Information Technology</em> - Expected Graduation: 2025<br>
-                        - Relevant courses: Object-Oriented Programming, Data Structures, Algorithms, Database Management, and Web Development.
-                    </p>
-                </section>
-        
-                <section class="skills">
-                    <h2>Skills</h2>
-                    <ul>
-                        <li><strong>Programming Languages:</strong> Java, Python, JavaScript</li>
-                        <li><strong>Backend Development:</strong> Java Spring Boot, RESTful API, Microservices</li>
-                        <li><strong>Databases:</strong> MySQL, MongoDB</li>
-                        <li><strong>Version Control:</strong> Git, GitHub</li>
-                        <li><strong>Problem Solving:</strong> Algorithm Optimization, Debugging</li>
-                        <li><strong>Teamwork:</strong> Agile Methodologies, SCRUM, Communication Skills</li>
-                    </ul>
-                </section>
-        
-                <section class="experience">
-                    <h2>Experience</h2>
-                    <p><strong>Personal Projects:</strong></p>
-                    <ul>
-                        <li>
-                            <strong>Student Management System</strong> (Java, MySQL) <br>
-                            - Developed a desktop application to manage student information for a small school.<br>
-                            - Implemented features such as CRUD operations, data filtering, and report generation.
-                        </li>
-                        <li>
-                            <strong>Weather Forecast API Integration</strong> (Java, Spring Boot) <br>
-                            - Built a RESTful API that integrates with a third-party weather service.<br>
-                            - The application provides real-time weather data and forecasts based on city inputs.
-                        </li>
-                    </ul>
-                </section>
-        
-                <section class="activities">
-                    <h2>Extracurricular Activities</h2>
-                    <p>
-                        <strong>Member of IT Club</strong> - Nông Lâm University <br>
-                        - Participated in coding competitions, hackathons, and regular club meetings to discuss new technologies and IT trends.
-                    </p>
-                </section>
-        
-                <section class="goals">
-                    <h2>Goals</h2>
-                    <p>
-                        My goal is to master Java backend development and gain proficiency in frameworks such as Spring Boot. 
-                        I aim to work on large-scale enterprise applications and enhance my skills in distributed systems, 
-                        cloud computing, and database optimization.
-                    </p>
-                </section>
-        
-                <!-- <footer>
-                    <p>Contact: [duynguyenavg@gmail] | [039 8167 244]</p>
-                </footer> -->
-            </div>
+    <div class="header-imange">
+        <iframe src="header-demo.html" frameborder="0" style="width: 100%; height: 400px;  "></iframe>
 
-
-        </div>
-
-        <br>
-        <div id="labs" style="display:none; height: 100%;" >
-            <h1>Labs</h1>
-            <div id="fix-bug" style="height: 1500px;">
-
-            
-                <div class="tabs">
-                    <button class="tab-button active" onclick="openTab(event, 'Lab1')">Lab 1</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab2')">Lab 2</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab3')">Lab 3</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab4')">Lab 4</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab5')">Lab 5</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab6')">Lab 6</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab7')">Lab 7</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab8')">Lab 8</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab9')">Lab 9</button>
-                    <button class="tab-button" onclick="openTab(event, 'Lab10')">Lab 10</button>
-                </div>
-
-                <div id="Lab1" class="tab-content active"  style="display: block;" >
-                    <h2>Lab 1</h2>
-                    <div class="blocks">
-                        <div class="block" onclick="toggleForm('lab1-container')">
-                            <div class="block-icon">📘</div>
-                            <h3>Lab: Create account</h3>
-                            <a href="lab1\lab1.html" >Lab details</a>
-                        </div>                    
-                        <!-- lab1 -->
-                        <div id="lab1-container" class="lab-content-form" style="display: none;">
-                            <iframe class="lab1-iframe" src="lab1\lab1.html" ></iframe>
-                        </div>
-                        <!-- lab2 -->
-                    </div>
-                </div>
-
-                <div id="Lab2" class="tab-content"  >
-                    <h2>Lab 2</h2>
-                    <div class="blocks"  onclick="toggleForm('lab2-container')">
-                        <div class="block">
-                            <div class="block-icon">📘</div>
-                            <h3>Lab: Login frame</h3>
-                            <a href="lab2\login.html" >Lab details</a>
-                    
-                        </div>
-                    
-                        <div class="block" onclick="toggleForm('lab2-n2-container')">
-                            <div class="block-icon">🧪</div>
-                            <h3>lab: testing</h3>
-                            <a href="lab2\test_code.html" >Lab details</a>
-                        </div>
-                        <!-- lab1 -->
-                        <div id="lab2-container" class="lab-content-form" style="display: none;">
-                            <iframe class="lab1-iframe" src="lab2\login.html" ></iframe>
-                        </div>
-                        <!-- lab2 -->
-                        <div id="lab2-n2-container" class="lab-content-form" style="display: none;">
-                            <iframe class="lab1-iframe" src="lab2\test_code.html" ></iframe>
-                        </div>
-                    </div>
-                </div> <!-- Thêm dấu đóng ở đây -->
-
-                <div id="Lab3" class="tab-content">
-                    <h2>Lab 3</h2>
-                    <div class="blocks">
-                        <div class="block"  onclick="toggleForm('lab3-container')" >
-                            <div class="block-icon">📘</div>
-                            <h3>Lab Work</h3>
-                            <a href="lab3\lab3.html" >Lab details</a>
-                        </div>
-                        <!-- lab2 -->
-                        <div id="lab3-container" class="lab-content-form" style="display: none;">
-                            <iframe class="lab1-iframe" src="lab3\lab3.html" ></iframe>
-                        </div>
-                        
-                    </div>
-                </div> <!-- Thêm dấu đóng ở đây -->
-            
-                <div id="Lab4" class="tab-content">
-                    <h2>Lab 4</h2>
-                    <div class="blocks">
-                        <div class="block"  onclick="toggleForm('lab4-container')" >
-                            <div class="block-icon">🧪</div>
-                            <h3>Lab : Udemy page</h3>
-                            <a href="lab4/lab4.html">Lab details</a>
-                        </div>
-                        <!-- lab 4 -->
-                        <div id="lab4-container" class="lab-content-form" style="display: none;">
-                            <iframe class="lab1-iframe" src="lab4\lab4.html" ></iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thêm dấu đóng ở đây -->
-                <div id="Lab5" class="tab-content">
-                    <h2>Lab 5</h2>
-                    <div class="blocks">
-                        <div class="block"  onclick="toggleForm('lab5-container')">
-                            <div class="block-icon">📘</div>
-                            <h3>Lab Form Udemy </h3>
-                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
-                            <a href="lab5/index.html">Lab details</a>
-                        </div>
-                        <!-- lab 4 -->
-                        <div id="lab5-container" class="lab-content-form" style="display: none;">
-                            <iframe class="lab1-iframe" src="lab5\index.html" ></iframe>
-                        </div>
-                      
-                    </div>
-                </div>  
-                <!-- Thêm dấu đóng ở đây -->
-                <div id="Lab6" class="tab-content">
-                    <h2>Lab 6</h2>
-                    <div class="blocks" onclick="toggleForm('lab6-container')">
-                        <div class="block">
-                            <div class="block-icon">🧪</div>
-                            <h3>Form custom challenge </h3>
-                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
-                            <a href="lab6/index.html">Lab details</a>
-                        </div>
-                          <!-- lab 4 -->
-                          <div id="lab6-container" class="lab-content-form" style="display: none;">
-                            <iframe class="lab1-iframe" src="lab6\index.html" ></iframe>
-                        </div>
-                    </div>
-                </div>  
-                <!-- Thêm dấu đóng ở đây -->
-                <div id="Lab7" class="tab-content">
-                    <h2>Lab 7</h2>
-                    <div class="blocks">
-                        <div class="block">
-                            <div class="block-icon">📘</div>
-                            <h3>Lab Work</h3>
-                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
-                        </div>
-                        <div class="block">
-                            <div class="block-icon">💡</div>
-                            <h3>Ideas</h3>
-                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
-                        </div>
-                        <div class="block">
-                            <div class="block-icon">🧪</div>
-                            <h3>Experiments</h3>
-                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
-                        </div>
-                    </div>
-                </div>  
-                <!-- Thêm dấu đóng ở đây -->
-                <div id="Lab8" class="tab-content">
-                    <h2>Lab 8</h2>
-                    <div class="blocks">
-                        <div class="block">
-                            <div class="block-icon">📘</div>
-                            <h3>Lab Work</h3>
-                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
-                        </div>
-                        <div class="block">
-                            <div class="block-icon">💡</div>
-                            <h3>Ideas</h3>
-                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
-                        </div>
-                        <div class="block">
-                            <div class="block-icon">🧪</div>
-                            <h3>Experiments</h3>
-                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
-                        </div>
-                    </div>
-                </div>  
-                <!-- Thêm dấu đóng ở đây -->
-                <div id="Lab9" class="tab-content">
-                    <h2>Lab 9</h2>
-                    <div class="blocks">
-                        <div class="block">
-                            <div class="block-icon">📘</div>
-                            <h3>Lab Work</h3>
-                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
-                        </div>
-                        <div class="block">
-                            <div class="block-icon">💡</div>
-                            <h3>Ideas</h3>
-                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
-                        </div>
-                        <div class="block">
-                            <div class="block-icon">🧪</div>
-                            <h3>Experiments</h3>
-                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
-                        </div>
-                    </div>
-                </div>  
-                <!-- Thêm dấu đóng ở đây -->
-                <div id="Lab10" class="tab-content">
-                    <h2>Lab 10</h2>
-                    <div class="blocks">
-                        <div class="block">
-                            <div class="block-icon">📘</div>
-                            <h3>Lab Work</h3>
-                            <p>This block represents the lab work done on new technologies and coding challenges.</p>
-                        </div>
-                        <div class="block">
-                            <div class="block-icon">💡</div>
-                            <h3>Ideas</h3>
-                            <p>This block represents brainstorming sessions to come up with new ideas and innovations.</p>
-                        </div>
-                        <div class="block">
-                            <div class="block-icon">🧪</div>
-                            <h3>Experiments</h3>
-                            <p>This block represents lab experiments focused on testing theories and real-world applications.</p>
-                        </div>
-                    </div>
-                </div>  
-            </div>
-          
-          <!-- Thêm dấu đóng ở đây -->
-        </div>
-      
-    
     </div>
-      <!-- footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>We are dedicated to providing the best educational resources and information.</p>
+    
+
+
+
+
+<!-- 
+<div class="search-section">
+    <a class="close-search" href="#"></a>
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <form method="post" action="#" class="w-50">
+            <div class="row">
+                <div class="col-10">
+                    <input type="search" value="" class="form-control palce bg-transparent border-0 search-input" placeholder="Search Here ..." /> 
+                </div>
+                <div class="col-2 mt-3">
+                     <button type="submit" class="btn bg-transparent text-white"> <i class="fas fa-search"></i> </button>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#labs">Labs</a></li>
+        </form>
+    </div>
+          -->
+<!-- </div> -->
+    
+<!-- Loading Screen -->
+<div id="ju-loading-screen">
+  <div class="sk-double-bounce">
+    <div class="sk-child sk-double-bounce1"></div>
+    <div class="sk-child sk-double-bounce2"></div>
+  </div>
+</div>
+
+
+<!-- /End Header -->
+<div class="col-12 col-lg-7 offset-lg-4 wow fadeInUpBig" data-wow-duration="2s">
+    <div >
+    <p class="font-30 fables-second-text-color" >Wellcome to my website</p>
+    <h1 class="fables-main-text-color bold-font mb-2 font-40">HCI-2024</h1>  
+    <p class="fables-forth-text-color font-22">
+        Nguyễn Hữu Duy
+        23130075
+    </p>
+   
+</div> 
+</div>
+
+<!-- Start Service -->
+<div class="container-fluid my-0 my-lg-5">
+          <div class="row">
+              <div class="col-12 col-lg-2 p-0">
+                   <div class="text-center fables-main-background-color fables-sqr-rotation fables-second-border-color ">
+                      <div class="text-rotate">
+                           <h2 class="text-white font-25">NLU<br><span class="white-color font-40 bold-font mt-2 d-block" >TRƯỜNG ĐẠI HỌC NÔNG LÂM TP.HCM</span></h2>
+                           <p class="fables-third-text-color mt-4 mb-3 mb-lg-5">
+                            Khoa công nghệ thông tin         
+                           </p>
+                      </div>
+                   </div>
+              </div>
+              <div class="col-12 col-lg-10 p-0">
+                  <div class="fables-index-services fables-after-overlay py-md-5 px-3 pr-md-4 pl-md-5 bg-rules sm-index-products mt-lg-0 mt-xl-5">
+                       <div class="container z-index position-relative">  
+                           <div class="row">
+                               <div class="col-12 col-lg-10 offset-lg-2">  
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown" data-wow-delay=".4s"> 
+                                            <div class="row text-center text-md-left">
+                                                <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0"> 
+                                                    <span class="fables-iconhead-set-light fables-second-text-color font-40"></span>
+                                                </div>
+                                                <div class="col-12 col-md-9 pl-md-0">
+                                                    <h2 class="text-white font-19 semi-font mb-2">Sáng tạo</h2>
+                                                    <div class="font-14 text-white">
+                                                        "Sinh viên sáng tạo" có thể hiểu là những bạn trẻ năng động, luôn tìm tòi và tạo ra các ý tưởng mới.  
+                                                    </div>
+
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown" data-wow-delay=".8s"> 
+                                            <div class="row text-center text-md-left">
+                                                <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
+                                                    <span class="fables-iconscreen fables-second-text-color font-40"></span>
+                                                </div>
+                                                <div class="col-12 col-md-9 pl-md-0">
+                                                   <h2 class="text-white font-19 semi-font mb-2">Đổi mới</h2>
+                                                   <div class="font-14 text-white">
+                                                    "Đổi mới" là một quá trình cải tiến hoặc làm mới một cách sáng tạo, công nghệ, kinh doanh, và quản lý.  
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown" data-wow-delay="1.2s"> 
+                                            <div class="row text-center text-md-left">
+                                                <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
+                                                    <span class="fables-iconfile fables-second-text-color font-40"></span>
+                                                </div>
+                                                <div class="col-12 col-md-9 pl-md-0">
+                                                   <h2 class="text-white font-19 semi-font mb-2">Hiện đại</h2>
+                                                    <div class="font-14 text-white">
+                                                        "Hiện đại" là khái niệm thể hiện sự phát triển, tiên tiến và phù hợp với xu hướng thời đại.
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown" data-wow-delay="1.6s"> 
+                                            <div class="row text-center text-md-left">
+                                                <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
+                                                    <span class="fables-iconhead-set-light fables-second-text-color font-40"></span>
+                                                </div>
+                                                <div class="col-12 col-md-9 pl-md-0">
+                                                    <h2 class="text-white font-19 semi-font mb-2">Phát triển</h2>
+                                                    <div class="font-14 text-white">
+                                                        "Phát triển" mở rộng khả năng, hoặc cải thiện chất lượng trong bất kỳ lĩnh vực nào, từ cá nhân, tổ chức, đến xã hội.   
+                                                    </div>
+
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                    </div> 
+                               </div>
+                           </div>
+                       </div>
+                  </div> 
+              </div>
+          </div>
+      </div>
+<!-- End Service -->
+
+<!-- Start why choose us --> 
+<div class="container-fluid">
+   <div class="row mt-3 mt-md-5">
+       <div class="col-12 col-lg-5 offset-lg-1 mb-4 mb-lg-0 overflow-hidden"> 
+           <h2 class="fables-second-text-color font-35 bold-font wow fadeInLeft"> Giới Thiệu <span class="fables-main-text-color"></span></h2>
+           <p class="fables-forth-text-color my-3 wow fadeInLeft"> 
+            Trường Đại học Nông Lâm Thành phố Hồ Chí Minh là một trong những trường đại học đa ngành lâu đời và lớn nhất tại Việt Nam. Trường tọa lạc trên khu đất rộng 118 ha, nằm tại phường Linh Trung, thành phố Thủ Đức, Thành phố Hồ Chí Minh và một phần tại phường Đông Hòa, thành phố Dĩ An, tỉnh Bình Dương.   
+           </p>  
+
+
+            <a href="#" class="btn fables-second-background-color white-color white-color-hover py-2 px-4 my-2 rounded-0 font-18">Learn More</a>
+
+       </div>
+       <div class="col-12 col-lg-5 offset-lg-1 p-0 text-right mb-lg-5">  
+            <div class=" position-relative">
+                 <img src="https://reviewedu.net/wp-content/uploads/2021/10/dai-hoc-nong-lam-tphcm-1.jpg" alt="" class="w-100" >  
+            </div>
+       </div>
+</div>
+</div>
+<!-- End why choose us -->
+
+<!-- Start Testimonials -->
+<div class="fables-testimonial fables-after-overlay py-4 py-lg-5 testimonial-index-bg mt-4 mt-lg-5 bg-rules">
+           <div class="container">
+                <h2 class="position-relative z-index white-color font-35 font-weight-bold text-center mb-2">Testimonial</h2> 
+                <p class="font-14 fables-third-text-color text-center z-index position-relative mt-2">See what others are saying</p> 
+                <div class="row">
+                    <div class="col-12 col-lg-8 offset-lg-2">
+                        
+                         <div class="owl-carousel owl-theme dots-0 mt-4 center-testimonial-carousel padding-outer" id="fables-testimonial-carousel">
+                              <div class="text-center fables-testimonial-carousel-item"> 
+                                   
+                                   <div> 
+                                        <p class="mb-3 fables-third-text-color fables-testimonial-detail font-15 font-italic position-relative mb-4 px-0 px-md-5">
+                                            No matter what issue or questions pops up, you are always there to 
+                                            assist me. Thank you so much for your excellent assistance and great 
+                                            customer support through years.
+                                        </p>
+                                        <h3 class="font-14 semi-font text-white">Billy Richards</h3>
+                                        <h3 class="font-13 font-italic white-color mt-2">Chief Manager, Simba Co</h3>
+
+                                   </div>
+                              </div>
+                              <div class="text-center fables-testimonial-carousel-item"> 
+                             
+                                   <div> 
+                                        <p class="mb-3 fables-third-text-color fables-testimonial-detail font-15 font-italic position-relative mb-4 px-0 px-md-5">
+                                            No matter what issue or questions pops up, you are always there to 
+                                            assist me. Thank you so much for your excellent assistance and great 
+                                            customer support through years.
+                                        </p>
+                                        <h3 class="font-14 semi-font text-white">Billy Richards</h3>
+                                        <h3 class="font-13 font-italic white-color mt-2">Chief Manager, Simba Co</h3>
+
+                                   </div>
+                               </div> 
+                        </div>
+                    </div> 
+                </div>
+            </div>
+    </div>
+
+  
+   
+<!-- Start Footer 2 Background Image  -->
+<div class="fables-footer-image fables-after-overlay white-color py-4 py-lg-5 bg-rules">
+    <div class="container">
+        <div class="row">   
+            <div class="col-12 col-sm-6 col-lg-4">
+                <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3">Contact us</h2>
+               <div class="my-3">
+                    <h4 class="font-16 semi-font"><span class="fables-iconmap-icon fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Address Information</h4>
+                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">
+                        Trụ sở chính: KP6, Phường Linh Trung, TP Thủ Đức, TP. Hồ Chí Minh, Việt Nam
+                        Phân hiệu Gia Lai: Lê Thánh Tôn, tp. Pleiku, Gia Lai, Việt Nam
+                        Phân hiệu Ninh Thuận: TT.Khánh Hải, Ninh Hải, Ninh Thuận, Việt Nam</p>
+                </div>
+                <div class="my-3">
+                    <h4 class="font-16 semi-font"><span class="fables-iconphone fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Call Now </h4>
+                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">+333 111 111 000</p>
+                </div>
+                <div class="my-3">
+                    <h4 class="font-16 semi-font"><span class="fables-iconemail fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Mail </h4>
+                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">23130075@st.hcmuaf.edu.cn</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3 mb-3">EXPLORE OUR SITE</h2>
+                <ul class="nav fables-footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Labs</a></li>       
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: 23130075@st.hcmuaf.edu.vn.com</p>
-                <p>Phone: +123 456 7890</p>
-            </div>
+                      
+        </div> 
+        
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 James Nguyen | 23130075 | All Rights Reserved</p>
-        </div>
-    </footer>
+</div>
+<div class="copyright fables-main-background-color mt-0 border-0 white-color">
+        <ul class="nav fables-footer-social-links just-center fables-light-footer-links">
+            <li><a href="#" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-pinterest-square"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+        <p class="mb-0">Nguyễn Hữu Duy</p> 
 
-    <script>
-        // Function to toggle the visibility of the form
-        function toggleForm(formId) {
-          const formContainer = document.getElementById(formId);
-          if (formContainer) {
-              formContainer.style.display = formContainer.style.display === 'none' || formContainer.style.display === '' ? 'block' : 'none';
-          }
-        }
+</div>
+    
+<!-- /End Footer 2 Background Image -->
 
-        function openTab(evt, tabName) {
-            var i, tabContent, tabButtons;
-            tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
-            }
-            tabButtons = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
 
-        // Simple navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-                this.classList.add('active');
-
-                let target = this.getAttribute('href').substring(1);
-                document.querySelectorAll('.container > div').forEach(div => div.style.display = 'none');
-                document.getElementById(target).style.display = 'block';
-            });
-        });
-
-        function showTab(tabName) {
-            // Ẩn tất cả nội dung các tab
-            var i, tabContent, tabLinks;
-            tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
-            }
-
-            // Hiển thị tab được nhấn
-            document.getElementById(tabName).style.display = "block";
-
-            // Đặt lại trạng thái "active" cho các link
-            tabLinks = document.querySelectorAll("nav ul li a");
-            tabLinks.forEach(function(link) {
-                link.classList.remove("active");
-            });
-
-            // Thêm class "active" cho tab hiện tại
-            event.currentTarget.classList.add("active");
-        }
-
-        function toggleForm(formId) {
-            var form = document.getElementById(formId);
-            if (form.style.display === "none") {
-                form.style.display = "block";
-            } else {
-                form.style.display = "none";
-            }
-        }
-
-    </script>
+<script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="assets/vendor/loadscreen/js/ju-loading-screen.js"></script>
+<script src="assets/vendor/jquery-circle-progress/circle-progress.min.js"></script>
+<script src="assets/vendor/popper/popper.min.js"></script>
+<script src="assets/vendor/timeline/jquery.timelify.js"></script>
+<script src="assets/vendor/WOW-master/dist/wow.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap-4-navbar.js"></script>
+<script src="assets/vendor/owlcarousel/owl.carousel.min.js"></script> 
+<script src="assets/vendor/fancybox-master/jquery.fancybox.min.js"></script>
+<script src="assets/vendor/video-background/jquery.mb.YTPlayer.js"></script>
+<script src="assets/custom/js/custom.js"></script>  
+ 
+    
 </body>
 </html>

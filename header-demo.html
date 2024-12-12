@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Header</title>
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header-slider {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            position: absolute;
+            display: flex;
+            width: 500%; /* 100% * 5 images */
+            height: 100%;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .slide {
+            width: 20%; /* 100% / 5 images */
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: white;
+        }
+
+        .slider-arrows {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 3;
+        }
+
+        .arrow {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .arrow:hover {
+            background: rgba(255,255,255,0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .slide-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .slide-content p {
+            font-size: 1.2rem;
+            animation: fadeIn 0.8s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-slider">
+        <div class="slider-container">
+            <div class="slide">
+                <img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t1.6435-9/74396258_114460400321924_1399913245277727970_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFB9v5_PFIwMZ1dlMx76nveVDunmdplCZ1UO6eZ2mUJnXw1WTGJCZSqfjkkJQrBLTkVgWexf7oSVwF-q_68GjOi&_nc_ohc=lh5l7JAQM7cQ7kNvgF5FLFJ&_nc_zt=23&_nc_ht=scontent.fsgn23-1.fna&_nc_gid=Am1jkxdknq5-cXKx2_6I6u-&oh=00_AYD2YHiHJGHRu76aOuqIMObQOkiRAdpRbDpRa58Z4Le3Sg&oe=67764989" alt="Slide 1">
+                <div class="slide-content">
+                    <h2>Welcome to Our School</h2>
+                    <p>Discover the power of education</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t1.6435-9/32294178_2113755595525456_8175661408340410368_n.jpg?stp=dst-jpg_s600x600&_nc_cat=100&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=kPeOzZ_3vkMQ7kNvgHZ2rmQ&_nc_zt=23&_nc_ht=scontent.fsgn5-5.fna&_nc_gid=AEa2ztG0rIk3iM4f_fGtbRU&oh=00_AYAypoCgVoTzL83dFFX_cngtizIq-MF2xioD9ZuumGEiVQ&oe=6768B21D" alt="Slide 2">
+                <div class="slide-content">
+                    <h2>Excellence in Learning</h2>
+                    <p>Building tomorrow's leaders</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://scontent.fsgn5-10.fna.fbcdn.net/v/t1.6435-9/32314020_2113751175525898_4775179196999663616_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_ohc=ly-nRySisYgQ7kNvgEBUSg6&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=AtWOXRT2mGrkuVmSvZFGOTX&oh=00_AYBn7UuQCvmKXtO7SQOhft3qojin6VMyNUCV85ZAbd5pAg&oe=67689027" alt="Slide 3">
+                <div class="slide-content">
+                    <h2>Modern Facilities</h2>
+                    <p>State-of-the-art learning environment</p>
+                </div>
+            </div>
+            <div class="slide">
+                
+                <img src="https://lh3.googleusercontent.com/p/AF1QipMMiHArFqlaQE7DrZktXuvtI0YtxhjMkw_sXoYZ=s1360-w1360-h1020" alt="Slide 4">
+                <div class="slide-content">
+                    <h2>Expert Teachers</h2>
+                    <p>Learn from the best</p>
+                </div>
+            </div>
+            <!-- <div class="slide">
+                <img src="https://scontent.fsgn23-1.fna.fbcdn.net/v/t39.30808-6/358666384_245302014938365_7543244880461098514_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeFRFxMrqWt9cZzqVUhwadSQ3BTRxg59e9jcFNHGDn172JSos0UI4HwRND6-43W5g6vX3UKyMFwg0wT3wB2AR-8-&_nc_ohc=eCYLpCeuG7sQ7kNvgGwIUBK&_nc_zt=23&_nc_ht=scontent.fsgn23-1.fna&_nc_gid=AsZgtVTybZvmeB7rj4mARlM&oh=00_AYDTRt7c6XGHsBzmVYH3yURj6QlU13n4cm26pt4IqEPRcQ&oe=67549FBA" alt="Slide 5">
+                <div class="slide-content">
+                    <h2>Join Our Community</h2>
+                    <p>Be part of something special</p>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="slider-nav">
+            <div class="nav-dot active"></div>
+            <div class="nav-dot"></div>
+            <div class="nav-dot"></div>
+            <div class="nav-dot"></div>
+            <div class="nav-dot"></div>
+        </div>
+
+        <div class="slider-arrows">
+            <div class="arrow prev">←</div>
+            <div class="arrow next">→</div>
+        </div>
+    </div>
+
+    <script>
+        const sliderContainer = document.querySelector('.slider-container');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        let currentSlide = 0;
+        let autoSlideInterval;
+
+        function updateSlider() {
+            sliderContainer.style.transform = `translateX(-${currentSlide * 20}%)`;
+            
+            // Update dots
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+
+            // Reset and start animations for current slide content
+            const currentContent = slides[currentSlide].querySelector('.slide-content');
+            const h2 = currentContent.querySelector('h2');
+            const p = currentContent.querySelector('p');
+            
+            h2.style.animation = 'none';
+            p.style.animation = 'none';
+            
+            // Trigger reflow
+            h2.offsetHeight;
+            p.offsetHeight;
+            
+            h2.style.animation = 'fadeIn 0.8s ease-out forwards';
+            p.style.animation = 'fadeIn 0.8s ease-out 0.3s forwards';
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+
+        // Add click events for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
+                resetAutoSlide();
+            });
+        });
+
+        // Add click events for arrows
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetAutoSlide();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetAutoSlide();
+        });
+
+        // Auto slide function
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Start auto sliding
+        startAutoSlide();
+
+        // Pause auto slide on hover
+        sliderContainer.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+        // Handle swipe events for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        sliderContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        sliderContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 30;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+                resetAutoSlide();
+            }
+        }
+    </script>
+</body>
+</html>
