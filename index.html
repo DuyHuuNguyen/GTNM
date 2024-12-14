@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,29 +9,30 @@
     <link rel="shortcut icon" href="assets/custom/images/shortcut.png">
 
     <title>Home</title>
-    
-    <!-- animate.css-->  
+
+    <!-- animate.css-->
     <link href="assets/vendor/animate.css-master/animate.min.css" rel="stylesheet">
     <!-- Load Screen -->
     <link href="assets/vendor/loadscreen/css/spinkit.css" rel="stylesheet">
     <!-- GOOGLE FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
     <!-- Font Awesome 5 -->
     <link href="assets/vendor/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
     <!-- Fables Icons -->
-    <link href="assets/custom/css/fables-icons.css" rel="stylesheet"> 
-    <!-- Bootstrap CSS --> 
+    <link href="assets/custom/css/fables-icons.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap/css/bootstrap-4-navbar.css" rel="stylesheet">
     <!-- portfolio filter gallery -->
     <link href="assets/vendor/portfolio-filter-gallery/portfolio-filter-gallery.css" rel="stylesheet">
     <!-- Video Background -->
-    <link href="assets/vendor/video-background/video-background.css" rel="stylesheet"> 
+    <link href="assets/vendor/video-background/video-background.css" rel="stylesheet">
     <!-- FANCY BOX -->
-    <link href="assets/vendor/fancybox-master/jquery.fancybox.min.css" rel="stylesheet"> 
+    <link href="assets/vendor/fancybox-master/jquery.fancybox.min.css" rel="stylesheet">
     <!-- RANGE SLIDER -->
     <link href="assets/vendor/range-slider/range-slider.css" rel="stylesheet">
-    <!-- OWL CAROUSEL  --> 
+    <!-- OWL CAROUSEL  -->
     <link href="assets/vendor/owlcarousel/owl.carousel.min.css" rel="stylesheet">
     <link href="assets/vendor/owlcarousel/owl.theme.default.min.css" rel="stylesheet">
     <!-- FABLES CUSTOM CSS FILE -->
@@ -39,384 +41,262 @@
     <link href="assets/custom/css/custom-responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
-
-
-    <style>
-        .header-slider {
-          position: relative;
-          width: 100%;
-          height: 400px;
-          overflow: hidden;
-      }
-
-      .slider-container {
-          position: absolute;
-          display: flex;
-          width: 500%; /* 100% * 5 images */
-          height: 100%;
-          transition: transform 0.5s ease-in-out;
-      }
-
-      .slide {
-          width: 20%; /* 100% / 5 images */
-          height: 100%;
-          position: relative;
-      }
-
-      .slide img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-      }
-
-      .slide-content {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: white;
-          text-align: center;
-          z-index: 2;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      }
-
-      .slide::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0,0,0,0.3);
-      }
-
-      .slider-nav {
-          position: absolute;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          display: flex;
-          gap: 10px;
-          z-index: 3;
-      }
-
-      .nav-dot {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          background: rgba(255,255,255,0.5);
-          cursor: pointer;
-          transition: background 0.3s ease;
-      }
-
-      .nav-dot.active {
-          background: white;
-      }
-
-      .slider-arrows {
-          position: absolute;
-          width: 100%;
-          top: 50%;
-          transform: translateY(-50%);
-          display: flex;
-          justify-content: space-between;
-          padding: 0 20px;
-          z-index: 3;
-      }
-
-      .arrow {
-          width: 40px;
-          height: 40px;
-          background: rgba(255,255,255,0.3);
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: background 0.3s ease;
-      }
-
-      .arrow:hover {
-          background: rgba(255,255,255,0.5);
-      }
-
-      @keyframes fadeIn {
-          from {
-              opacity: 0;
-              transform: translateY(20px);
-          }
-          to {
-              opacity: 1;
-              transform: translateY(0);
-          }
-      }
-
-      .slide-content h2 {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          animation: fadeIn 0.8s ease-out forwards;
-      }
-
-      .slide-content p {
-          font-size: 1.2rem;
-          animation: fadeIn 0.8s ease-out 0.3s forwards;
-          opacity: 0;
-      }
- 
-  
-  </style>
+    <link rel="stylesheet" href="index-styles.css">
     
-  
-    
-     
 </head>
 
 
 <body>
 
-
-
     <nav style="height: 50px;">
         <ul>
             <li><a href="index.html" class="active-v2">Home</a></li>
-            <li><a href="cv.html" >About</a></li>
-            <li><a href="labs.html" >Labs</a></li>
+            <li><a href="cv.html">About</a></li>
+            <li><a href="labs.html">Labs</a></li>
         </ul>
     </nav>
-    
+
     <div class="header-imange">
         <iframe src="header-demo.html" frameborder="0" style="width: 100%; height: 400px;  "></iframe>
 
     </div>
-    
 
-
-
-
-<!-- 
-<div class="search-section">
-    <a class="close-search" href="#"></a>
-    <div class="d-flex justify-content-center align-items-center h-100">
-        <form method="post" action="#" class="w-50">
-            <div class="row">
-                <div class="col-10">
-                    <input type="search" value="" class="form-control palce bg-transparent border-0 search-input" placeholder="Search Here ..." /> 
-                </div>
-                <div class="col-2 mt-3">
-                     <button type="submit" class="btn bg-transparent text-white"> <i class="fas fa-search"></i> </button>
-                </div>
-            </div>
-        </form>
-    </div>
-          -->
-<!-- </div> -->
-    
-<!-- Loading Screen -->
-<div id="ju-loading-screen">
-  <div class="sk-double-bounce">
-    <div class="sk-child sk-double-bounce1"></div>
-    <div class="sk-child sk-double-bounce2"></div>
-  </div>
-</div>
-
-
-<!-- /End Header -->
-<div class="col-12 col-lg-7 offset-lg-4 wow fadeInUpBig" data-wow-duration="2s">
-    <div >
-    <p class="font-30 fables-second-text-color" >Wellcome to my website</p>
-    <h1 class="fables-main-text-color bold-font mb-2 font-40">HCI-2024</h1>  
-    <p class="fables-forth-text-color font-22">
-        Nguyễn Hữu Duy
-        23130075
-    </p>
-   
-</div> 
-</div>
-
-<!-- Start Service -->
-<div class="container-fluid my-0 my-lg-5">
-          <div class="row">
-              <div class="col-12 col-lg-2 p-0">
-                   <div class="text-center fables-main-background-color fables-sqr-rotation fables-second-border-color ">
-                      <div class="text-rotate">
-                           <h2 class="text-white font-25">NLU<br><span class="white-color font-40 bold-font mt-2 d-block" >TRƯỜNG ĐẠI HỌC NÔNG LÂM TP.HCM</span></h2>
-                           <p class="fables-third-text-color mt-4 mb-3 mb-lg-5">
-                            Khoa công nghệ thông tin         
-                           </p>
-                      </div>
-                   </div>
-              </div>
-              <div class="col-12 col-lg-10 p-0">
-                  <div class="fables-index-services fables-after-overlay py-md-5 px-3 pr-md-4 pl-md-5 bg-rules sm-index-products mt-lg-0 mt-xl-5">
-                       <div class="container z-index position-relative">  
-                           <div class="row">
-                               <div class="col-12 col-lg-10 offset-lg-2">  
-                                    <div class="row">
-                                        <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown" data-wow-delay=".4s"> 
-                                            <div class="row text-center text-md-left">
-                                                <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0"> 
-                                                    <span class="fables-iconhead-set-light fables-second-text-color font-40"></span>
-                                                </div>
-                                                <div class="col-12 col-md-9 pl-md-0">
-                                                    <h2 class="text-white font-19 semi-font mb-2">Sáng tạo</h2>
-                                                    <div class="font-14 text-white">
-                                                        "Sinh viên sáng tạo" có thể hiểu là những bạn trẻ năng động, luôn tìm tòi và tạo ra các ý tưởng mới.  
-                                                    </div>
-
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown" data-wow-delay=".8s"> 
-                                            <div class="row text-center text-md-left">
-                                                <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
-                                                    <span class="fables-iconscreen fables-second-text-color font-40"></span>
-                                                </div>
-                                                <div class="col-12 col-md-9 pl-md-0">
-                                                   <h2 class="text-white font-19 semi-font mb-2">Đổi mới</h2>
-                                                   <div class="font-14 text-white">
-                                                    "Đổi mới" là một quá trình cải tiến hoặc làm mới một cách sáng tạo, công nghệ, kinh doanh, và quản lý.  
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown" data-wow-delay="1.2s"> 
-                                            <div class="row text-center text-md-left">
-                                                <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
-                                                    <span class="fables-iconfile fables-second-text-color font-40"></span>
-                                                </div>
-                                                <div class="col-12 col-md-9 pl-md-0">
-                                                   <h2 class="text-white font-19 semi-font mb-2">Hiện đại</h2>
-                                                    <div class="font-14 text-white">
-                                                        "Hiện đại" là khái niệm thể hiện sự phát triển, tiên tiến và phù hợp với xu hướng thời đại.
-                                                    </div>
-                                                </div>
-                                            </div> 
-                                        </div>
-                                        <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown" data-wow-delay="1.6s"> 
-                                            <div class="row text-center text-md-left">
-                                                <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
-                                                    <span class="fables-iconhead-set-light fables-second-text-color font-40"></span>
-                                                </div>
-                                                <div class="col-12 col-md-9 pl-md-0">
-                                                    <h2 class="text-white font-19 semi-font mb-2">Phát triển</h2>
-                                                    <div class="font-14 text-white">
-                                                        "Phát triển" mở rộng khả năng, hoặc cải thiện chất lượng trong bất kỳ lĩnh vực nào, từ cá nhân, tổ chức, đến xã hội.   
-                                                    </div>
-
-                                                </div>
-                                            </div> 
-                                        </div> 
-                                    </div> 
-                               </div>
-                           </div>
-                       </div>
-                  </div> 
-              </div>
-          </div>
-      </div>
-<!-- End Service -->
-
-<!-- Start why choose us --> 
-<div class="container-fluid">
-   <div class="row mt-3 mt-md-5">
-       <div class="col-12 col-lg-5 offset-lg-1 mb-4 mb-lg-0 overflow-hidden"> 
-           <h2 class="fables-second-text-color font-35 bold-font wow fadeInLeft"> Giới Thiệu <span class="fables-main-text-color"></span></h2>
-           <p class="fables-forth-text-color my-3 wow fadeInLeft"> 
-            Trường Đại học Nông Lâm Thành phố Hồ Chí Minh là một trong những trường đại học đa ngành lâu đời và lớn nhất tại Việt Nam. Trường tọa lạc trên khu đất rộng 118 ha, nằm tại phường Linh Trung, thành phố Thủ Đức, Thành phố Hồ Chí Minh và một phần tại phường Đông Hòa, thành phố Dĩ An, tỉnh Bình Dương.   
-           </p>  
-
-
-            <a href="#" class="btn fables-second-background-color white-color white-color-hover py-2 px-4 my-2 rounded-0 font-18">Learn More</a>
-
-       </div>
-       <div class="col-12 col-lg-5 offset-lg-1 p-0 text-right mb-lg-5">  
-            <div class=" position-relative">
-                 <img src="https://reviewedu.net/wp-content/uploads/2021/10/dai-hoc-nong-lam-tphcm-1.jpg" alt="" class="w-100" >  
-            </div>
-       </div>
-</div>
-</div>
-<!-- End why choose us -->
-
-<!-- Start Testimonials -->
-<div class="fables-testimonial fables-after-overlay py-4 py-lg-5 testimonial-index-bg mt-4 mt-lg-5 bg-rules">
-           <div class="container">
-                <h2 class="position-relative z-index white-color font-35 font-weight-bold text-center mb-2">Testimonial</h2> 
-                <p class="font-14 fables-third-text-color text-center z-index position-relative mt-2">See what others are saying</p> 
-                <div class="row">
-                    <div class="col-12 col-lg-8 offset-lg-2">
-                        
-                         <div class="owl-carousel owl-theme dots-0 mt-4 center-testimonial-carousel padding-outer" id="fables-testimonial-carousel">
-                              <div class="text-center fables-testimonial-carousel-item"> 
-                                   
-                                   <div> 
-                                        <p class="mb-3 fables-third-text-color fables-testimonial-detail font-15 font-italic position-relative mb-4 px-0 px-md-5">
-                                            No matter what issue or questions pops up, you are always there to 
-                                            assist me. Thank you so much for your excellent assistance and great 
-                                            customer support through years.
-                                        </p>
-                                        <h3 class="font-14 semi-font text-white">Billy Richards</h3>
-                                        <h3 class="font-13 font-italic white-color mt-2">Chief Manager, Simba Co</h3>
-
-                                   </div>
-                              </div>
-                              <div class="text-center fables-testimonial-carousel-item"> 
-                             
-                                   <div> 
-                                        <p class="mb-3 fables-third-text-color fables-testimonial-detail font-15 font-italic position-relative mb-4 px-0 px-md-5">
-                                            No matter what issue or questions pops up, you are always there to 
-                                            assist me. Thank you so much for your excellent assistance and great 
-                                            customer support through years.
-                                        </p>
-                                        <h3 class="font-14 semi-font text-white">Billy Richards</h3>
-                                        <h3 class="font-13 font-italic white-color mt-2">Chief Manager, Simba Co</h3>
-
-                                   </div>
-                               </div> 
-                        </div>
-                    </div> 
-                </div>
-            </div>
-    </div>
-
-  
-   
-<!-- Start Footer 2 Background Image  -->
-<div class="fables-footer-image fables-after-overlay white-color py-4 py-lg-5 bg-rules">
-    <div class="container">
-        <div class="row">   
-            <div class="col-12 col-sm-6 col-lg-4">
-                <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3">Contact us</h2>
-               <div class="my-3">
-                    <h4 class="font-16 semi-font"><span class="fables-iconmap-icon fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Address Information</h4>
-                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">
-                        Trụ sở chính: KP6, Phường Linh Trung, TP Thủ Đức, TP. Hồ Chí Minh, Việt Nam
-                        Phân hiệu Gia Lai: Lê Thánh Tôn, tp. Pleiku, Gia Lai, Việt Nam
-                        Phân hiệu Ninh Thuận: TT.Khánh Hải, Ninh Hải, Ninh Thuận, Việt Nam</p>
-                </div>
-                <div class="my-3">
-                    <h4 class="font-16 semi-font"><span class="fables-iconphone fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Call Now </h4>
-                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">+333 111 111 000</p>
-                </div>
-                <div class="my-3">
-                    <h4 class="font-16 semi-font"><span class="fables-iconemail fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span> Mail </h4>
-                    <p class="font-14 fables-fifth-text-color mt-2 ml-4">23130075@st.hcmuaf.edu.cn</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3 mb-3">EXPLORE OUR SITE</h2>
-                <ul class="nav fables-footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Labs</a></li>       
-                </ul>
-            </div>
-                      
-        </div> 
-        
+    <!-- Loading Screen -->
+    <div id="ju-loading-screen">
+        <div class="sk-double-bounce">
+            <div class="sk-child sk-double-bounce1"></div>
+            <div class="sk-child sk-double-bounce2"></div>
         </div>
-</div>
-<div class="copyright fables-main-background-color mt-0 border-0 white-color">
+    </div>
+
+
+    <!-- /End Header -->
+    <div class="col-12 col-lg-7 offset-lg-4 wow fadeInUpBig" data-wow-duration="2s">
+        <div>
+            <p class="font-30 fables-second-text-color">Wellcome to my website</p>
+            <h1 class="fables-main-text-color bold-font mb-2 font-40">HCI-2024</h1>
+            <p class="fables-forth-text-color font-22">
+                Nguyễn Hữu Duy
+                23130075
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Start Service -->
+    <div class="container-fluid my-0 my-lg-5">
+        <div class="row">
+            <div class="col-12 col-lg-2 p-0">
+                <div class="text-center fables-main-background-color fables-sqr-rotation fables-second-border-color ">
+                    <div class="text-rotate">
+                        <h2 class="text-white font-25">NLU<br><span
+                                class="white-color font-40 bold-font mt-2 d-block">TRƯỜNG ĐẠI HỌC NÔNG LÂM TP.HCM</span>
+                        </h2>
+                        <p class="fables-third-text-color mt-4 mb-3 mb-lg-5">
+                            Khoa công nghệ thông tin
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-10 p-0">
+                <div
+                    class="fables-index-services fables-after-overlay py-md-5 px-3 pr-md-4 pl-md-5 bg-rules sm-index-products mt-lg-0 mt-xl-5">
+                    <div class="container z-index position-relative">
+                        <div class="row">
+                            <div class="col-12 col-lg-10 offset-lg-2">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown"
+                                        data-wow-delay=".4s">
+                                        <div class="row text-center text-md-left">
+                                            <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
+                                                <span
+                                                    class="fables-iconhead-set-light fables-second-text-color font-40"></span>
+                                            </div>
+                                            <div class="col-12 col-md-9 pl-md-0">
+                                                <h2 class="text-white font-19 semi-font mb-2">Sáng tạo</h2>
+                                                <div class="font-14 text-white">
+                                                    "Sinh viên sáng tạo" có thể hiểu là những bạn trẻ năng động, luôn
+                                                    tìm tòi và tạo ra các ý tưởng mới.
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown"
+                                        data-wow-delay=".8s">
+                                        <div class="row text-center text-md-left">
+                                            <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
+                                                <span class="fables-iconscreen fables-second-text-color font-40"></span>
+                                            </div>
+                                            <div class="col-12 col-md-9 pl-md-0">
+                                                <h2 class="text-white font-19 semi-font mb-2">Đổi mới</h2>
+                                                <div class="font-14 text-white">
+                                                    "Đổi mới" là một quá trình cải tiến hoặc làm mới một cách sáng tạo,
+                                                    công nghệ, kinh doanh, và quản lý.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown"
+                                        data-wow-delay="1.2s">
+                                        <div class="row text-center text-md-left">
+                                            <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
+                                                <span class="fables-iconfile fables-second-text-color font-40"></span>
+                                            </div>
+                                            <div class="col-12 col-md-9 pl-md-0">
+                                                <h2 class="text-white font-19 semi-font mb-2">Hiện đại</h2>
+                                                <div class="font-14 text-white">
+                                                    "Hiện đại" là khái niệm thể hiện sự phát triển, tiên tiến và phù hợp
+                                                    với xu hướng thời đại.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 pb-lg-5 mt-4 mt-lg-0 wow fadeInDown"
+                                        data-wow-delay="1.6s">
+                                        <div class="row text-center text-md-left">
+                                            <div class="col-12 col-md-3 col-xl-2 mb-3 mb-md-0">
+                                                <span
+                                                    class="fables-iconhead-set-light fables-second-text-color font-40"></span>
+                                            </div>
+                                            <div class="col-12 col-md-9 pl-md-0">
+                                                <h2 class="text-white font-19 semi-font mb-2">Phát triển</h2>
+                                                <div class="font-14 text-white">
+                                                    "Phát triển" mở rộng khả năng, hoặc cải thiện chất lượng trong bất
+                                                    kỳ lĩnh vực nào, từ cá nhân, tổ chức, đến xã hội.
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Service -->
+
+    <!-- Start why choose us -->
+    <div class="container-fluid">
+        <div class="row mt-3 mt-md-5">
+            <div class="col-12 col-lg-5 offset-lg-1 mb-4 mb-lg-0 overflow-hidden">
+                <h2 class="fables-second-text-color font-35 bold-font wow fadeInLeft"> Giới Thiệu <span
+                        class="fables-main-text-color"></span></h2>
+                <p class="fables-forth-text-color my-3 wow fadeInLeft">
+                    Trường Đại học Nông Lâm Thành phố Hồ Chí Minh là một trong những trường đại học đa ngành lâu đời và
+                    lớn nhất tại Việt Nam. Trường tọa lạc trên khu đất rộng 118 ha, nằm tại phường Linh Trung, thành phố
+                    Thủ Đức, Thành phố Hồ Chí Minh và một phần tại phường Đông Hòa, thành phố Dĩ An, tỉnh Bình Dương.
+                </p>
+
+
+                <a href="#"
+                    class="btn fables-second-background-color white-color white-color-hover py-2 px-4 my-2 rounded-0 font-18">Learn
+                    More</a>
+
+            </div>
+            <div class="col-12 col-lg-5 offset-lg-1 p-0 text-right mb-lg-5">
+                <div class=" position-relative">
+                    <img src="https://reviewedu.net/wp-content/uploads/2021/10/dai-hoc-nong-lam-tphcm-1.jpg" alt=""
+                        class="w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End why choose us -->
+
+    <!-- Start Testimonials -->
+    <div class="fables-testimonial fables-after-overlay py-4 py-lg-5 testimonial-index-bg mt-4 mt-lg-5 bg-rules">
+        <div class="container">
+            <h2 class="position-relative z-index white-color font-35 font-weight-bold text-center mb-2">Testimonial</h2>
+            <p class="font-14 fables-third-text-color text-center z-index position-relative mt-2">See what others are
+                saying</p>
+            <div class="row">
+                <div class="col-12 col-lg-8 offset-lg-2">
+
+                    <div class="owl-carousel owl-theme dots-0 mt-4 center-testimonial-carousel padding-outer"
+                        id="fables-testimonial-carousel">
+                        <div class="text-center fables-testimonial-carousel-item">
+
+                            <div>
+                                <p
+                                    class="mb-3 fables-third-text-color fables-testimonial-detail font-15 font-italic position-relative mb-4 px-0 px-md-5">
+                                    No matter what issue or questions pops up, you are always there to
+                                    assist me. Thank you so much for your excellent assistance and great
+                                    customer support through years.
+                                </p>
+                                <h3 class="font-14 semi-font text-white">Billy Richards</h3>
+                                <h3 class="font-13 font-italic white-color mt-2">Chief Manager, Simba Co</h3>
+
+                            </div>
+                        </div>
+                        <div class="text-center fables-testimonial-carousel-item">
+
+                            <div>
+                                <p
+                                    class="mb-3 fables-third-text-color fables-testimonial-detail font-15 font-italic position-relative mb-4 px-0 px-md-5">
+                                    No matter what issue or questions pops up, you are always there to
+                                    assist me. Thank you so much for your excellent assistance and great
+                                    customer support through years.
+                                </p>
+                                <h3 class="font-14 semi-font text-white">Billy Richards</h3>
+                                <h3 class="font-13 font-italic white-color mt-2">Chief Manager, Simba Co</h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Start Footer 2 Background Image  -->
+    <div class="fables-footer-image fables-after-overlay white-color py-4 py-lg-5 bg-rules">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3">Contact us</h2>
+                    <div class="my-3">
+                        <h4 class="font-16 semi-font"><span
+                                class="fables-iconmap-icon fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span>
+                            Address Information</h4>
+                        <p class="font-14 fables-fifth-text-color mt-2 ml-4">
+                            Trụ sở chính: KP6, Phường Linh Trung, TP Thủ Đức, TP. Hồ Chí Minh, Việt Nam
+                            Phân hiệu Gia Lai: Lê Thánh Tôn, tp. Pleiku, Gia Lai, Việt Nam
+                            Phân hiệu Ninh Thuận: TT.Khánh Hải, Ninh Hải, Ninh Thuận, Việt Nam</p>
+                    </div>
+                    <div class="my-3">
+                        <h4 class="font-16 semi-font"><span
+                                class="fables-iconphone fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span>
+                            Call Now </h4>
+                        <p class="font-14 fables-fifth-text-color mt-2 ml-4">+333 111 111 000</p>
+                    </div>
+                    <div class="my-3">
+                        <h4 class="font-16 semi-font"><span
+                                class="fables-iconemail fables-second-text-color pr-2 font-20 mt-1 d-inline-block"></span>
+                            Mail </h4>
+                        <p class="font-14 fables-fifth-text-color mt-2 ml-4">23130075@st.hcmuaf.edu.cn</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <h2 class="font-20 semi-font fables-second-border-color border-bottom pb-3 mb-3">EXPLORE OUR SITE
+                    </h2>
+                    <ul class="nav fables-footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cv.html">About</a></li>
+                        <li><a href="labs.html">Labs</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright fables-main-background-color mt-0 border-0 white-color">
         <ul class="nav fables-footer-social-links just-center fables-light-footer-links">
             <li><a href="#" target="_blank"><i class="fab fa-google-plus-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
@@ -425,26 +305,23 @@
             <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
             <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
         </ul>
-        <p class="mb-0">Nguyễn Hữu Duy</p> 
+        <p class="mb-0">Nguyễn Hữu Duy</p>
 
-</div>
-    
-<!-- /End Footer 2 Background Image -->
+    </div>
 
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="assets/vendor/loadscreen/js/ju-loading-screen.js"></script>
+    <script src="assets/vendor/jquery-circle-progress/circle-progress.min.js"></script>
+    <script src="assets/vendor/popper/popper.min.js"></script>
+    <script src="assets/vendor/timeline/jquery.timelify.js"></script>
+    <script src="assets/vendor/WOW-master/dist/wow.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap-4-navbar.js"></script>
+    <script src="assets/vendor/owlcarousel/owl.carousel.min.js"></script>
+    <script src="assets/vendor/fancybox-master/jquery.fancybox.min.js"></script>
+    <script src="assets/vendor/video-background/jquery.mb.YTPlayer.js"></script>
+    <script src="assets/custom/js/custom.js"></script>
 
-<script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-<script src="assets/vendor/loadscreen/js/ju-loading-screen.js"></script>
-<script src="assets/vendor/jquery-circle-progress/circle-progress.min.js"></script>
-<script src="assets/vendor/popper/popper.min.js"></script>
-<script src="assets/vendor/timeline/jquery.timelify.js"></script>
-<script src="assets/vendor/WOW-master/dist/wow.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap-4-navbar.js"></script>
-<script src="assets/vendor/owlcarousel/owl.carousel.min.js"></script> 
-<script src="assets/vendor/fancybox-master/jquery.fancybox.min.js"></script>
-<script src="assets/vendor/video-background/jquery.mb.YTPlayer.js"></script>
-<script src="assets/custom/js/custom.js"></script>  
- 
-    
 </body>
+
 </html>
