@@ -238,3 +238,7 @@
     animation: fadeIn 0.8s ease-out 0.3s forwards;
     opacity: 0;
 }
+.nav.fables-footer-links a {
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: inherit; /* Để màu sắc kế thừa từ cha hoặc bạn có thể chỉ định một màu */
+}
